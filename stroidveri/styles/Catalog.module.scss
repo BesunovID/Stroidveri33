@@ -1,0 +1,25 @@
+
+.category {
+    display: flex;
+}
+
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    .cart{
+        border-radius: 2px;
+        border-color: black;
+        .image{
+            border: none;
+        }
+        .name{
+            text-align: center;
+        }
+        .desc{
+            border: none;
+        }
+        .price{
+            border: none;
+        }
+    }
+}
