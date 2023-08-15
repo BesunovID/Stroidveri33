@@ -5,28 +5,28 @@ import Link from 'next/link'
 
 export default function Header() {
     return (
-        <div className={style.navbar}>
-            <div className={style.logoImg}>
-                <Link href='/'>
-                    <a><Image src={logo} alt='Стройдвери 33' /></a>
-                </Link>
-            </div>
-            <div className={style.navLinks}>
-                <ul>
-                    <li>
-                        <Link href='/catalog'>Каталог</Link>
-                    </li>
-                    <li>
-                        <Link href='/contacts'>Контакты</Link>
-                    </li>
-                    <li>
-                        <Link href='/delivery'>Доставка</Link>
-                    </li>
-                    <li>
-                        <Link href='/about'>О компании</Link>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <header className={style.header}>
+            <nav className={style.nav}>
+                <div className={style.logo}>
+                    <Link href='/'>
+                        <a><Image src={logo} alt='Стройдвери 33' /></a>
+                    </Link>
+                </div>
+                <div className={style.navLinks}>
+                    <Link href='/catalog'>
+                        <a className={style.pageLink}>Каталог</a>
+                    </Link>
+                    <Link href='/contacts'>
+                        <a className={style.pageLink}>Контакты</a>
+                    </Link>
+                    <Link href='/delivery'>
+                        <a className={style.pageLink}>Доставка</a>
+                    </Link>
+                    <Link href='/about'>
+                        <a className={style.pageLink}>О компании</a>
+                    </Link>
+                </div>
+            </nav>
+        </header>
     )
 }
