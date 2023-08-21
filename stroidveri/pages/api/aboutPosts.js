@@ -6,7 +6,6 @@ export default function handler(req, res) {
 const posts = [
     {
         'id':  '1',
-        'name': 'base',
         'head': '',
         'image': '',
         'desc': 'Компания ООО "СтройДвери" занимается изготовлением деревянных дверей \
@@ -20,7 +19,6 @@ const posts = [
     },
     {
         'id':  '2',
-        'name': 'postLeft',
         'head': 'Качество',
         'image': '/vercel.svg',
         'desc': 'Компания располагает большими производственными площадями\
@@ -28,7 +26,6 @@ const posts = [
     },
     {
         'id':  '3',
-        'name': 'postRight',
         'head': 'Цена',
         'image': '/vercel.svg',
         'desc': 'Вся представленная продукция приобретается напрямую от производителя,\
@@ -36,14 +33,12 @@ const posts = [
     },
     {
         'id':  '4',
-        'name': 'postLeft',
         'head': 'Доставка',
         'image': '/vercel.svg',
         'desc': 'Прямые поставки от производителя по всей территории РФ'
     },
     {
         'id':  '5',
-        'name': 'postRight',
         'head': 'Индивидуальный подход',
         'image': '/vercel.svg',
         'desc': 'пытфтфишщфмифуифуигшщф'

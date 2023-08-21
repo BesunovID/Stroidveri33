@@ -1,6 +1,20 @@
 
 .category {
     display: flex;
+    flex-grow: 1;
+    align-items: center;
+    .catLink{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        //margin: 1rem 30%;
+        &:hover{
+            border: 0.1rem solid rgba(grey, 0.8);
+            border-radius: 0.2rem;
+            margin: 0 0.1rem;
+        }
+    }
+    
 }
 
 .products{
@@ -9,6 +23,7 @@
     .cart{
         border-radius: 2px;
         border-color: black;
+        margin: 1rem;
         .image{
             border: none;
         }

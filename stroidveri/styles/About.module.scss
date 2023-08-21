@@ -1,48 +1,28 @@
 
-@mixin post () {
-    max-width: 1240px;
-    height: 100%;
-    min-height: 25vh;
-    display: flex;
-    justify-content: space-between;
-    .container{
+.advantages{
+    .post{
+        max-width: 1240px;
+        height: 100%;
+        min-height: 25vh;
         display: flex;
-        flex-direction: column;
-        flex-basis: 60%;
-        .name{
-
+        justify-content: space-between;
+        .image{
+            position: relative;
+            flex-basis: 30%;
         }
-        .description{
-    
-        }
-    }
-}
+        .container{
+            display: flex;
+            flex-direction: column;
+            flex-basis: 60%;
+            .name{
 
-.advantages
-
-.postRight{
-    @include post();
-    .image{
-        position: relative;
-        flex-basis: 40%;
-        span{
-            img{
-                object-fit: "cover";
+            }
+            .description{
+        
             }
         }
-    }
-}
-
-.postLeft{
-    @include post();
-    flex-direction: row-reverse;
-    .image{
-        position: relative;
-        flex-basis: 40%;
-        span{
-            img{
-                object-fit: "cover";
-            }
+        &.left{
+            flex-direction: row-reverse;
         }
     }
 }

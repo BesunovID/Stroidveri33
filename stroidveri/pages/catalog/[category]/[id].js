@@ -4,7 +4,7 @@ import style from '../../../styles/Product.module.scss'
 export default function Product( {content} ) {
     return(
         <div className="container">
-            <Link href={`/catalog`}>
+            <Link href={`/catalog/${content.map((e) => e.category)}`}>
                     <button>Назад</button>
             </Link>
             <div className={style.product}>

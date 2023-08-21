@@ -13,7 +13,7 @@ export default function About( {posts} ) {
             <div className={style.advantages}>
                 {posts.lenght !== 0 ? (
                     posts.map((post) => ( 
-                        (post.name == 'base') ? 
+                        (post.id == '1') ? 
                         (<div key={post.id} className={style.post}>
                             <div className={style.container}>
                                 <div className={style.name}>
@@ -25,8 +25,8 @@ export default function About( {posts} ) {
                             </div>
                         </div> ) :
 
-                        (<div key={post.id} className={post.name == 'postLeft' ?
-                            style.postLeft: style.postRight}>
+                        (<div key={post.id} className={(post.id % 2) == 0 ?
+                            style.post : `${style.post} ${style.left}`}>
                             <div className={style.image}>
                                 <Image
                                     src={post.image}

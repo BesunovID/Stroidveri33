@@ -15,10 +15,10 @@ export default function Catalog( {catalog} ) {
 
             <div className={style.category}>
                 <Link href={`/catalog/doors`}>
-                    <a>Двери</a>
+                    <a className={style.catLink}>Двери</a>
                 </Link>
                 <Link href={`/catalog/furnitures`}>
-                    <a>Фурнитура</a>
+                    <a className={style.catLink}>Фурнитура</a>
                 </Link>
             </div>
             <div className={style.products}>

@@ -1,6 +1,6 @@
 import style from "../../../styles/Catalog.module.scss";
 import Link from "next/link";
-import Image from "next/image";
+import ProductCard from "../../../components/ProductCard/ProductCard";
 
 export default function Category( {content} ) {
     return(
@@ -11,27 +11,7 @@ export default function Category( {content} ) {
             <div className={style.products}>
                     {content.lenght !== 0 ? (
                         content.map((product) => (
-                            <Link href={`/catalog/${product.category}/${product.id}`} key={product.id}>
-                                <div className={style.cart} key={product.id}>
-                                    <div className={style.image}>
-                                        <Image 
-                                            src={product.image} 
-                                            alt={product.name} 
-                                            width={200}
-                                            height={300}
-                                        />
-                                    </div>
-                                    <p className={style.name}>
-                                        {product.name}
-                                    </p>
-                                    <span className={style.desc}>
-                                        {product.desc}
-                                    </span>
-                                    <p className={style.price}>
-                                        {product.price}
-                                    </p>
-                                </div>
-                            </Link>
+                            <ProductCard  product={product}/>
                         ))
                     ) : (
                         <div>Товары не найдены ...</div>
