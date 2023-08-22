@@ -1,19 +1,28 @@
 
+$border: 1px solid black;
+
 .advantages{
     .post{
+        position: relative;
         max-width: 1240px;
         height: 100%;
-        min-height: 25vh;
+        min-height: 18rem;
         display: flex;
         justify-content: space-between;
+        background: linear-gradient(170deg,
+                    rgba(255,255,255,1) 40%,
+                    rgba(231,231,231,1) 100%); 
         .image{
             position: relative;
-            flex-basis: 30%;
+            flex: 1 0 30%;
+            margin: 0 2rem;
         }
-        .container{
+        .data{
             display: flex;
             flex-direction: column;
-            flex-basis: 60%;
+            justify-content: center;
+            flex: 1 1 60%;
+            margin: 0 2rem;
             .name{
 
             }
@@ -21,8 +30,28 @@
         
             }
         }
+                
         &.left{
             flex-direction: row-reverse;
+            background: linear-gradient(190deg,
+                    rgba(255,255,255,1) 40%,
+                    rgba(231,231,231,0.4) 100%); 
+            &::after{
+                left: -2px;
+                border-right: none;
+                border-left: $border;
+            }
         }
-    }
+
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: 0px;
+            right: -2px;
+            width: 92%;
+            height: 72%;
+            border-right: $border;
+            border-bottom: $border;
+        }
+    }           
 }

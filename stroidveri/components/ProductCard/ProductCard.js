@@ -1,4 +1,4 @@
-import style from '../../styles/Catalog.module.scss'
+import style from '../../styles/_Product.module.scss'
 import Image from 'next/image'
 import Button from './Button';
 

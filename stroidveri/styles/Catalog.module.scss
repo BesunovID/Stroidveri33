@@ -1,38 +1,37 @@
+@import 'product.module.scss';
 
 .category {
-    display: flex;
+    @include flexible();
     flex-grow: 1;
-    align-items: center;
     .catLink{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        //margin: 1rem 30%;
+        @include flexible();
+        @include border(0);
+        flex: 0 1 35%;
+        margin: 2rem;
+        .image-wrapper{
+            position: relative;
+            width: 50%;
+            height: 8rem;
+        }
+        p{
+            text-align: center;
+            flex: 0 0 40%;
+        }
         &:hover{
-            border: 0.1rem solid rgba(grey, 0.8);
-            border-radius: 0.2rem;
-            margin: 0 0.1rem;
+            background-color: #f2f2f2;
         }
     }
     
-}
-
-.products{
-    display: flex;
-    flex-wrap: wrap;
-    .cart{
-        border-radius: 2px;
-        border-color: black;
-        margin: 1rem;
-        .image{
-            border: none;
-        }
-        .name{
-            text-align: center;
-        }
-    }
 }
 
 .backBut{
-    
+    @include border(0);
+    margin-top: 2rem;
+    margin-left: 85%;
+    margin-bottom: 1rem;
+    width: 8rem;
+    height: 3rem;
+    &:hover{
+        @include border(1);
+    }
 }

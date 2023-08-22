@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import Head from "next/head"
 import style from "../../styles/Catalog.module.scss"
 import ProductCard from "../../components/ProductCard/ProductCard"
@@ -15,10 +16,24 @@ export default function Catalog( {catalog} ) {
 
             <div className={style.category}>
                 <Link href={`/catalog/doors`}>
-                    <a className={style.catLink}>Двери</a>
+                    <a className={style.catLink}>
+                        <div className={style['image-wrapper']}>
+                            <Image src="/vercel.svg" 
+                                alt="Vercel Logo" 
+                                layout="fill" />
+                        </div>
+                        <p>Двери</p> 
+                    </a>
                 </Link>
                 <Link href={`/catalog/furnitures`}>
-                    <a className={style.catLink}>Фурнитура</a>
+                    <a className={style.catLink}>
+                        <div className={style['image-wrapper']}>
+                            <Image src="/vercel.svg" 
+                                alt="Vercel Logo" 
+                                layout="fill" />
+                        </div>
+                        <p>Фурнитура</p> 
+                    </a>
                 </Link>
             </div>
             <div className={style.products}>

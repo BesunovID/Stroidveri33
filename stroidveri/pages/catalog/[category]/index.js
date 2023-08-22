@@ -6,7 +6,7 @@ export default function Category( {content} ) {
     return(
         <div className="container">
             <Link href={`/catalog`}>
-                <button>Назад</button>
+                <button className={style.backBut}>Назад</button>
             </Link>
             <div className={style.products}>
                     {content.lenght !== 0 ? (

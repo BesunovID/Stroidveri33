@@ -13,36 +13,7 @@ export default function About( {posts} ) {
             <div className={style.advantages}>
                 {posts.lenght !== 0 ? (
                     posts.map((post) => ( 
-                        (post.id == '1') ? 
-                        (<div key={post.id} className={style.post}>
-                            <div className={style.container}>
-                                <div className={style.name}>
-                                    <p>{post.head}</p>
-                                </div>
-                                <div className={style.description}>
-                                    <p>{post.desc}</p>
-                                </div>
-                            </div>
-                        </div> ) :
-
-                        (<div key={post.id} className={(post.id % 2) == 0 ?
-                            style.post : `${style.post} ${style.left}`}>
-                            <div className={style.image}>
-                                <Image
-                                    src={post.image}
-                                    alt={post.head}
-                                    layout='fill'
-                                />
-                            </div>
-                            <div className={style.container}>
-                                <div className={style.name}>
-                                    <p>{post.head}</p>
-                                </div>
-                                <div className={style.description}>
-                                    <p>{post.desc}</p>
-                                </div>
-                            </div>
-                        </div>)
+                        <Post key={post.id} data={post} />
                     ))
                 ): (
                     <div> Ошибка, попробуйте позже</div>
@@ -51,6 +22,30 @@ export default function About( {posts} ) {
         </div>
     )
 }
+
+const Post = ({ data }) => {
+    return(
+        <div key={data.id} className={(data.id % 2) == 0 ?
+            style.post : `${style.post} ${style.left}`}>
+            {data.id != '1' ? (<div className={style.image}>
+                <Image
+                    src={data.image}
+                    alt={data.head}
+                    layout='fill'
+                />
+            </div>) : ''}
+            <div className={style.data}>
+                <div className={style.name}>
+                    <p>{data.head}</p>
+                </div>
+                <div className={style.description}>
+                    <p>{data.desc}</p>
+                </div>
+            </div>
+        </div>
+    )
+}
+
 
 export async function getStaticProps() {
     const res = await fetch('http://localhost:3000//api/aboutPosts');

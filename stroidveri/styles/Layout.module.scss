@@ -9,9 +9,12 @@ $border-width: 0.1rem;
 .header {
     display: block;
     position: sticky;
+    background-color: rgba(white, 1);
     left: 0;
     right: 0;
     top: 0;
+    border-bottom: 1px solid grey;
+    z-index: 10;
     .nav{
         display: flex;
         align-items: stretch;
