@@ -12,7 +12,8 @@
     "@pbe/react-yandex-maps": "^1.2.4",
     "next": "^12.3.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
     "eslint": "8.46.0",

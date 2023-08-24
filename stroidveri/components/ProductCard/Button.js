@@ -1,8 +1,8 @@
 import style from '../../styles/Catalog.module.scss'
 import { useState } from "react"
-import Modal from './Modal';
+import Modal from '../Modal';
 
-export default function Button({ content }) {
+export default function Button({ children }) {
     
     const [isOpen, setOpen] = useState(false);
 
@@ -12,13 +12,12 @@ export default function Button({ content }) {
                 className={style.cart}
                 onClick={() => {setOpen(true)}}
             >
-            {content}
+            {children}
             </button>
             <Modal 
-                isOpen = {isOpen}
-                setOpen = {setOpen}
-                product = {content.props.product}
-            />
+                isOpen={isOpen} 
+                setOpen={setOpen} 
+                product={children.props.product} />
         </>
     )
 }

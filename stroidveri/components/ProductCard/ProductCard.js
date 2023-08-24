@@ -4,13 +4,13 @@ import Button from './Button';
 
 export default function ProductCard({ product }) {
     return(
-        <Button 
-            content = {<Content product={product} />}
-        />
+        <Button>
+            <Content product={product} />
+        </Button>
     )
 }
  
-export const Content = ({ product }) => {
+const Content = ({ product }) => {
     return(
     <>
         <div className={style.image}>
