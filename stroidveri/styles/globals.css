@@ -25,7 +25,6 @@ a {
   }
 }
 
-.modal-open{
-  height: 100vh;
+.modal-open {
   overflow: hidden;
 }

@@ -1,11 +1,11 @@
 import Link from "next/link";
-import style from '../../../styles/Product.module.scss'
+import style from '../../../styles/Catalog.module.scss'
 
 export default function Product( {content} ) {
     return(
         <div className="container">
             <Link href={`/catalog/${content.map((e) => e.category)}`}>
-                    <button>Назад</button>
+                <button className={style.backBut}>Назад</button>
             </Link>
             <div className={style.product}>
                 {content.lenght !== 0 ?

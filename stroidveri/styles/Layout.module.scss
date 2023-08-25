@@ -2,16 +2,20 @@ $border-width: 0.1rem;
 
 @mixin container() {
     max-width: 80rem;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    margin-left: calc(100vw - 100%);
+}
+
+@mixin flexible() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header {
-    display: block;
+    @include flexible();
     position: sticky;
     background-color: rgba(white, 1);
-    left: 0;
-    right: 0;
     top: 0;
     border-bottom: 1px solid grey;
     z-index: 10;
@@ -28,7 +32,6 @@ $border-width: 0.1rem;
                 }
             }
         }
-        
         .navLinks{
             display: flex;
             flex-grow: 1;
@@ -51,11 +54,10 @@ $border-width: 0.1rem;
     }
 }
 
-
 .content{
-    display: flex;
+    @include flexible();
     flex-direction: column;
-    .container{
+    .conteiner{
         @include container();
     }
 }

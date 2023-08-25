@@ -7,7 +7,7 @@ export default function Layout({ children }) {
         <>
             <Header />
             <main className={style.content}>
-                <div className={style.container}>
+                <div className={style.conteiner}>
                     {children}
                 </div>
             </main>

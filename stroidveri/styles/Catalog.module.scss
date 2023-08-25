@@ -1,37 +1,40 @@
 @import 'product.module.scss';
 
-.category {
-    @include flexible();
-    flex-grow: 1;
-    .catLink{
+.wrapper{
+    .category {
         @include flexible();
-        @include border(0);
-        flex: 0 1 35%;
-        margin: 2rem;
-        .image-wrapper{
-            position: relative;
-            width: 50%;
-            height: 8rem;
+        flex-grow: 1;
+        .catLink{
+            @include flexible();
+            @include border(0);
+            flex: 0 1 35%;
+            margin: 2rem;
+            .image-wrapper{
+                position: relative;
+                width: 50%;
+                height: 8rem;
+            }
+            p{
+                text-align: center;
+                flex: 0 0 40%;
+            }
+            &:hover{
+                background-color: #f2f2f2;
+            }
         }
-        p{
-            text-align: center;
-            flex: 0 0 40%;
-        }
-        &:hover{
-            background-color: #f2f2f2;
-        }
+        
     }
     
-}
-
-.backBut{
-    @include border(0);
-    margin-top: 2rem;
-    margin-left: 85%;
-    margin-bottom: 1rem;
-    width: 8rem;
-    height: 3rem;
-    &:hover{
-        @include border(1);
+    .backBut{
+        @include border(0);
+        margin-top: 2rem;
+        margin-left: 85%;
+        margin-bottom: 1rem;
+        width: 8rem;
+        height: 3rem;
+        &:hover{
+            @include border(1);
+        }
     }
 }
+

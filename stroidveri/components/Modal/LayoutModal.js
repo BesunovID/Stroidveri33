@@ -5,6 +5,7 @@ import {useEffect, useRef, useState} from 'react'
 import {CSSTransition} from 'react-transition-group'
 import { ANIMATION_TIME } from './constant'
 
+
 export default function LayoutModal({ product, isOpen, setOpen }) { 
     const [animation, setAnimation] = useState(false);
 
@@ -97,30 +98,6 @@ const Content = ({ animation, product, setOpen}) => {
                             height={300}
                         />
                     </div>
-                    <div className={style.image}>
-                        <Image 
-                            src={product.image} 
-                            alt={product.name} 
-                            width={200}
-                            height={300}
-                        />
-                    </div>
-                    <div className={style.image}>
-                        <Image 
-                            src={product.image} 
-                            alt={product.name} 
-                            width={200}
-                            height={300}
-                        />
-                    </div>
-                    <div className={style.image}>
-                        <Image 
-                            src={product.image} 
-                            alt={product.name} 
-                            width={200}
-                            height={300}
-                        />
-                    </div>
                     <p className={style.name}>
                         {product.name}
                     </p>
@@ -131,7 +108,7 @@ const Content = ({ animation, product, setOpen}) => {
                         {product.price}
                     </p>
                     <Link href={`/catalog/${product.category}/${product.id}`}>
-                        <button>Перейти на страницу товара</button>
+                        <button onClick={() => setOpen(false)}>Перейти на страницу товара</button>
                     </Link>
                 </div> 
             </div>

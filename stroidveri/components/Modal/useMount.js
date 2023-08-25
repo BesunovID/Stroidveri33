@@ -6,13 +6,15 @@ export const useMount = ({ isOpen }) => {
 
     useEffect(() => {
         if (isOpen && !mounted) {
+            const width = document.body.clientWidth;
             setMounted(true);
             document.body.classList.add('modal-open');
-            document.body.style.width = document.body.clientWidth;
+            document.body.style['padding-right'] = `${document.body.clientWidth - width}px`;
         } else if (!isOpen && mounted) {
             setTimeout(() => {
                 setMounted(false);
                 document.body.classList.remove('modal-open');
+                document.body.style['padding-right'] = '';
             }, ANIMATION_TIME)
         }
     }, [isOpen]);
