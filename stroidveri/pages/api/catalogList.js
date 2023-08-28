@@ -2,11 +2,13 @@
 export const categories = [
   {
     'id': '1',
-    'name': 'doors', 
+    'name': 'doors',
+    'namePage': 'Двери' 
   },
   {
     'id': '2',
     'name': 'furnitures', 
+    'namePage': 'Фурнитура'
   },
 ];
 
@@ -52,6 +54,7 @@ export const catalogList = [
     'category': 'doors',
     'name': 'ИДО 21-10П',
     'params': [],
+    'sizes': ['2100 x 700', '2100 x 800', '2100 x 900', '2100 x 1200'],
     'desc': 'Строительная дверь...',
     'price': '2000',
     'image': '/vercel.svg',
@@ -61,6 +64,7 @@ export const catalogList = [
     'category': 'doors',
     'name': 'ДУ21-10п',
     'params': [],
+    'sizes': ['2100 x 900', '2100 x 1000'],
     'desc': 'Строительная дверь...',
     'price': '2000',
     'image': '/vercel.svg',
@@ -70,6 +74,7 @@ export const catalogList = [
     'category': 'doors',
     'name': '12432',
     'params': [],
+    'sizes': ['2100 x 900', '2100 x 1000'],
     'desc': 'Строительная дверь...',
     'price': '2000',
     'image': '/vercel.svg',
@@ -79,6 +84,7 @@ export const catalogList = [
     'category': 'doors',
     'name': 'И632',
     'params': [],
+    'sizes': ['2100 x 900', '2100 x 1000'],
     'desc': 'Строительная дверь...',
     'price': '2000',
     'image': '/vercel.svg',
@@ -88,6 +94,7 @@ export const catalogList = [
     'category': 'doors',
     'name': 'ИДО253',
     'params': [],
+    'sizes': ['2100 x 900', '2100 x 1000'],
     'desc': 'Строительная дверь...',
     'price': '2000',
     'image': '/vercel.svg',
@@ -97,6 +104,7 @@ export const catalogList = [
     'category': 'doors',
     'name': 'ИДО7544',
     'params': [],
+    'sizes': ['2100 x 900', '2100 x 1000'],
     'desc': 'Строительная дверь...',
     'price': '2000',
     'image': '/vercel.svg',
@@ -106,6 +114,7 @@ export const catalogList = [
     'category': 'furnitures',
     'name': 'Петля 2353',
     'params': [],
+    'sizes': ['2100 x 900', '2100 x 1000'],
     'desc': 'Петли...',
     'price': '2000',
     'image': '/vercel.svg',
@@ -115,6 +124,7 @@ export const catalogList = [
     'category': 'furnitures',
     'name': 'Петля 5274',
     'params': [],
+    'sizes': ['2100 x 900', '2100 x 1000'],
     'desc': 'Петли...',
     'price': '2000',
     'image': '/vercel.svg',
@@ -124,6 +134,7 @@ export const catalogList = [
     'category': 'furnitures',
     'name': 'Замок 353 2353',
     'params': [],
+    'sizes': ['2100 x 900', '2100 x 1000'],
     'desc': 'Замок...',
     'price': '2000',
     'image': '/vercel.svg',

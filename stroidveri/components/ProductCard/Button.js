@@ -9,7 +9,7 @@ export default function Button({ children }) {
     return(
         <>
             <button
-                className={style.cart}
+                className={style.product}
                 onClick={() => {setOpen(true)}}
             >
             {children}

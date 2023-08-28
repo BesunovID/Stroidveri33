@@ -1,6 +1,6 @@
 $border-width: 0.1rem;
 
-@mixin container() {
+@mixin conteiner() {
     max-width: 80rem;
     width: 100%;
     margin-left: calc(100vw - 100%);
@@ -22,7 +22,7 @@ $border-width: 0.1rem;
     .nav{
         display: flex;
         align-items: stretch;
-        @include container();
+        @include conteiner();
         .logo {
             margin: 0.5rem 3rem 0.5rem 0;
             img{
@@ -57,8 +57,8 @@ $border-width: 0.1rem;
 .content{
     @include flexible();
     flex-direction: column;
-    .conteiner{
-        @include container();
+    .container{
+        @include conteiner();
     }
 }
 
