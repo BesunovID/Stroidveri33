@@ -9,63 +9,68 @@
     justify-content: center;
 }
 
-.wrapper{
-    .content{
-        .cart{
-            @include border();
-            display: grid;
-            grid-template-columns: 45% 50%;
-            grid-template-rows: repeat(4, auto);
-            row-gap: 10px;
-            justify-content: center;
-            margin: 1rem;
-            .name{
-                border-top: 1px solid black;
-                padding-top: 1rem;
-                text-align: center;
-                grid-column: 1/ span 2;
-                grid-row: 1/ auto;
-            }
-            .image{
-                border: none;
-                grid-column: 1/ auto;
-                grid-row: 2/ auto;
-            }
-            .sizes{
-                display: flex;
-                grid-column: 2/ auto;
-                grid-row: 2/ auto;
-                ul{
-                    list-style-type: none;
-                    li:hover,
-                    li:active{
-                        @include border(1);
-                        background-color: #f7f7f7;
-                    }
-                }
-            }
-            .desc{
-                grid-column: 1/ span 2;
-                grid-row: 3/ auto;
-            }
-            .price{
-                grid-column: 1/ span 2;
-                grid-row: 4/ auto;
-            }
-            &:hover{
+.cart{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 0.5fr 0.30fr;
+    grid-template-rows: auto minmax(150px, 300px) minmax(50px, min-content) auto;
+    row-gap: 30px;
+    column-gap: 30px;
+    justify-content: center;
+    margin: 1rem 0;
+    .name{
+        text-align: center;
+        grid-column: 1/ span 2;
+        grid-row: 1/ auto;
+        margin: 0;
+    }
+    .image{
+        position: relative;
+        @include flexible();
+        margin: 0 20px;
+        border: none;
+        grid-column: 1/ auto;
+        grid-row: 2/ span 2;
+    }
+    .sizes{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        grid-column: 2/ auto;
+        grid-row: 2/ auto;
+        p{
+            align-self: flex-start;
+        }
+        ul{
+            width: 100%;
+            list-style-type: none;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            overflow-y: auto;
+            /* li:hover,
+            li:active{
                 @include border(1);
-            }
+                background-color: #f7f7f7;
+            } */
         }
     }
-    .backBut{
-        @include border(0);
-        margin-top: 2rem;
-        margin-left: 85%;
-        margin-bottom: 1rem;
-        width: 8rem;
-        height: 3rem;
-        &:hover{
-            @include border(1);
-        }
+    .price{
+        grid-column: 2/ auto;
+        grid-row: 3/ auto;
+        margin: 0;
+    }
+    .desc{
+        grid-column: 1/ span 2;
+        grid-row: 4/ auto;
+    }
+}
+
+.backBut{
+    @include border(0);
+    width: 8rem;
+    height: 3rem;
+    &:hover{
+        @include border(1);
     }
 }

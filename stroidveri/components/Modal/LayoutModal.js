@@ -4,6 +4,7 @@ import Image from 'next/image'
 import {useEffect, useRef, useState} from 'react'
 import {CSSTransition} from 'react-transition-group'
 import { ANIMATION_TIME } from './constant'
+import ProductCard from '../ProductCard'
 
 
 export default function LayoutModal({ product, isOpen, setOpen }) { 
@@ -80,37 +81,21 @@ const Content = ({ animation, product, setOpen}) => {
             unmountOnExit
         >
             <div className={style.content} ref={contentRef}>
-                <Image 
-                    src={'/vercel.svg'}
-                    width={30}
-                    height={30}
-                    className={style.modalClose}
-                    onClick={() => {
-                        setOpen(false);
-                    }} 
-                />
-                <div className={style.cart}>
-                    <div className={style.image}>
-                        <Image 
-                            src={product.image} 
-                            alt={product.name} 
-                            width={200}
-                            height={300}
-                        />
-                    </div>
-                    <p className={style.name}>
-                        {product.name}
-                    </p>
-                    <span className={style.desc}>
-                        {product.desc}
-                    </span>
-                    <p className={style.price}>
-                        {product.price}
-                    </p>
-                    <Link href={`/catalog/${product.category}/${product.id}`}>
-                        <button onClick={() => setOpen(false)}>Перейти на страницу товара</button>
+                <div className={style.modalClose}>
+                    <Image 
+                        src={'/vercel.svg'}
+                        width={50}
+                        height={50}
+                        className={style.modalClose}
+                        onClick={() => {
+                            setOpen(false);
+                        }} 
+                    />
+                </div>
+                <ProductCard product={product} />
+                <Link href={`/catalog/${product.category}/${product.id}`}>
+                        <button className={style.onPage} onClick={() => setOpen(false)}>Перейти на страницу товара</button>
                     </Link>
-                </div> 
             </div>
         </CSSTransition>
     )

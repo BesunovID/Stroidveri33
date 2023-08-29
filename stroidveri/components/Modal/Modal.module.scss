@@ -1,3 +1,4 @@
+@import '../../styles/Product.module.scss';
 
 .container{
     position: fixed;
@@ -14,32 +15,25 @@
         background-color: rgba(black, 0.4);
     }
     .content{
+        max-width: 55rem;
+        width: 90%;
         position: absolute;
+        @include flexible();
+        flex-direction: column;
         padding: 1.2rem;
-        margin-top: 9%;
+        margin-top: 9vh;
         border-radius: 1rem;
         background-color: white;
         z-index: 12;
         .modalClose{
             position: absolute;
             right: 1rem;
-            top: -1rem;
+            top: 1rem;
         }
-        .cart{
-            .image{
-                border: none;
-            }
-            .name{
-                text-align: center;
-            }
-            .desc{
-                border: none;
-            }
-            .price{
-                border: none;
-            }
+        .onPage{
+
         }
-    }
+    } 
 }
 
     

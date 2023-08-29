@@ -3,7 +3,11 @@ $border-width: 0.1rem;
 @mixin conteiner() {
     max-width: 80rem;
     width: 100%;
-    margin-left: calc(100vw - 100%);
+    padding-left: 20px;
+    padding-right: 20px;
+    @media (min-width: 80rem) {
+        margin-left: calc(100vw - 100%);
+    }
 }
 
 @mixin flexible() {
