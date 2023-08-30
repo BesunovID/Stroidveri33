@@ -1,4 +1,87 @@
-
-.yaMap{
-    border: none;
+@mixin flexible {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+@mixin blockBorder {
+    background-color: rgba(#f1f1f1, 0.7);
+    //border: 2px solid rgba(#f1f1f1, 0.8);
+    border-radius: 0.7rem;
+    padding: 15px 0;
+}
+
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, auto);
+    row-gap: 30px;
+    column-gap: 30px;
+    margin: 20px 0;
+    .numbers{
+        @include flexible();
+        @include blockBorder();
+        //margin-bottom: 19px;
+        grid-column: 1/ span 3;
+        grid-row: 1/ auto;
+        p{
+            text-align: center;
+            margin: 0;
+            div{
+                display: inline-block;
+                margin: 5px 3vw;
+            }
+        } 
+        span{
+            flex-shrink: 0;
+        }
+    }
+    .mail{
+        @include flexible();
+        @include blockBorder();
+        //margin-bottom: 19px;
+        grid-column: 4/ span 3;
+        grid-row: 1/ auto;
+        p{
+            margin: 5px 3vw;
+        }
+        span{
+            flex-shrink: 0;
+        }
+    }
+    .requisites{
+        @include flexible();
+        flex-direction: column;
+        grid-column: 1/ span 2;
+        grid-row: 2/ auto;
+        padding-left: 10px;
+        p{
+            span{
+                display: block;
+                margin: 20px 0;
+                line-height: 150%;
+            }
+        }
+        
+    }
+    .adress{
+        grid-column: 3/ span 4;
+        grid-row: 2/ auto;
+        p{
+            text-align: center;
+        }
+        .yaMap{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .map{
+                margin-top: 20px;
+                width: 85%;
+                height: 50vw;
+                max-height: 450px;
+            }
+        }
+    }
+}
+
