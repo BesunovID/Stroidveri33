@@ -21,7 +21,7 @@ export default function Catalog( {catalog} ) {
                                     alt="Vercel Logo" 
                                     layout="fill" />
                             </div>
-                            <p>Двери</p> 
+                            <h2>Двери</h2> 
                         </a>
                     </Link>
                     <Link href={`/catalog/furnitures`}>
@@ -31,7 +31,7 @@ export default function Catalog( {catalog} ) {
                                     alt="Vercel Logo" 
                                     layout="fill" />
                             </div>
-                            <p>Фурнитура</p> 
+                            <h2>Фурнитура</h2> 
                         </a>
                     </Link>
                 </div>

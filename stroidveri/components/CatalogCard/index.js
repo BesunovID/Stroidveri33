@@ -42,9 +42,9 @@ const Content = ({ product }) => {
                     height={300}
                 />
             </div>
-            <p className={styleProduct.cart_name}>
+            <h3 className={styleProduct.cart_name}>
                 {product.name}
-            </p>
+            </h3>
         </>
     )
 } 

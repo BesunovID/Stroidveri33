@@ -24,10 +24,10 @@ export default function Contacts() {
                     width={50}
                     height={50}
                 />
-                <p> 
+                <h2> 
                     <div>8-930-031-00-53</div> 
                     <div>8-904-596-33-84</div>
-                </p> 
+                </h2> 
             </div>
             <div className={style.mail}>
                 <Image
@@ -36,20 +36,22 @@ export default function Contacts() {
                     width={50}
                     height={50}
                 />
-                <p>stroidveri33@mail.ru</p>
+                <h2>stroidveri33@mail.ru</h2>
             </div>
             <div className={style.requisites}>
-                <p>{requisites.map((e) => (
+                <h3>Реквизиты</h3>
+                <p>
+                {requisites.map((e) => (
                     <span> {e} <br /></span>
                 ))}</p>
             </div>
             <div className={style.adress}>
-                <p>Наш адрес: <br />
-                г. Ковров ул. Набережная, д. 23А, стр. 8</p>
+                <h3>Наш адрес: <br />
+                г. Ковров ул. Набережная, д. 23А, стр. 8</h3>
                 <div className={style.yaMap}>
                     <YMaps>
                         <Map defaultState={defaultState} className={style.map}>
-                            <Placemark geometry={[56.395841, 41.317580]} />
+                            <Placemark geometry={defaultState.center} />
                         </Map>
                     </YMaps>
                 </div>

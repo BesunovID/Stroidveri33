@@ -6,7 +6,6 @@
 
 @mixin blockBorder {
     background-color: rgba(#f1f1f1, 0.7);
-    //border: 2px solid rgba(#f1f1f1, 0.8);
     border-radius: 0.7rem;
     padding: 15px 0;
 }
@@ -22,11 +21,11 @@
     .numbers{
         @include flexible();
         @include blockBorder();
-        //margin-bottom: 19px;
         grid-column: 1/ span 3;
         grid-row: 1/ auto;
-        p{
+        h2{
             text-align: center;
+            font-size: larger;
             margin: 0;
             div{
                 display: inline-block;
@@ -40,10 +39,10 @@
     .mail{
         @include flexible();
         @include blockBorder();
-        //margin-bottom: 19px;
         grid-column: 4/ span 3;
         grid-row: 1/ auto;
-        p{
+        h2{
+            font-size: larger;
             margin: 5px 3vw;
         }
         span{
@@ -56,9 +55,15 @@
         grid-column: 1/ span 2;
         grid-row: 2/ auto;
         padding-left: 10px;
+        h3{
+            font-size: larger;
+            margin: 0;
+        }
         p{
+            text-align: center;
             span{
                 display: block;
+                text-align: left;
                 margin: 20px 0;
                 line-height: 150%;
             }
@@ -68,7 +73,9 @@
     .adress{
         grid-column: 3/ span 4;
         grid-row: 2/ auto;
-        p{
+        h3{
+            margin: 0;
+            font-size: larger;
             text-align: center;
         }
         .yaMap{

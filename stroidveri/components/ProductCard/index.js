@@ -5,9 +5,9 @@ import Image from 'next/image'
 export default function ProductCard({ product }) {
     return(
         <div className={style.cart}>
-            <p className={style.name}>
+            <h1 className={style.name}>
                 {product.name}
-            </p>
+            </h1>
             <div className={style.image}>
                 <Image 
                     src={product.image} 
