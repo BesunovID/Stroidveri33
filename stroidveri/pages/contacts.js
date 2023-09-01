@@ -41,8 +41,8 @@ export default function Contacts() {
             <div className={style.requisites}>
                 <h3>Реквизиты</h3>
                 <p>
-                {requisites.map((e) => (
-                    <span> {e} <br /></span>
+                {requisites.map((e, id) => (
+                    <span key={id}> {e} <br /></span>
                 ))}</p>
             </div>
             <div className={style.adress}>

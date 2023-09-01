@@ -4,7 +4,8 @@ import style from '../../../styles/Product.module.scss'
 import ProductCard from "../../../components/ProductCard";
 
 export default function Product( {content} ) {
-    const product = content[0];
+    const product = content.product[0];
+    const colors = content.colors;
     return(
         <>
             <Head>
@@ -15,7 +16,7 @@ export default function Product( {content} ) {
             <Link href={`/catalog/${product.category}`}>
                 <button className={style.backBut}>Назад</button>
             </Link>
-            <ProductCard product={product} />
+            <ProductCard product={product} colors={colors} />
         </>
     )
 }
@@ -23,7 +24,8 @@ export default function Product( {content} ) {
 export async function getStaticProps(context) {
     const content = await fetch(`http://localhost:3000/api/products/${context.params.id}`)
         .then((res) => res.json());
-    
+
+
     if (!content) {
         return {
             notFound: true,
@@ -31,7 +33,7 @@ export async function getStaticProps(context) {
     }
     return{
         props: {
-            content,
+            content
         },
     };
 }

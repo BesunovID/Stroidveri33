@@ -5,6 +5,7 @@ import {useEffect, useRef, useState} from 'react'
 import {CSSTransition} from 'react-transition-group'
 import { ANIMATION_TIME } from './constant'
 import ProductCard from '../ProductCard'
+import { colors } from '../../pages/api/catalogList'
 
 
 export default function LayoutModal({ product, isOpen, setOpen }) { 
@@ -92,7 +93,7 @@ const Content = ({ animation, product, setOpen}) => {
                         }} 
                     />
                 </div>
-                <ProductCard product={product} />
+                <ProductCard product={product} colors={colors} />
                 <Link href={`/catalog/${product.category}/${product.id}`}>
                         <button className={style.onPage} onClick={() => setOpen(false)}>Перейти на страницу товара</button>
                     </Link>

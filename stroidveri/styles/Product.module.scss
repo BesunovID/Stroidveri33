@@ -11,18 +11,17 @@
 
 .cart{
     display: grid;
-    width: 100%;
-    grid-template-columns: 0.4fr 0.35fr;
-    grid-template-rows: auto minmax(150px, 300px) minmax(50px, min-content) auto;
-    row-gap: 30px;
+    width: 90%;
+    grid-template-columns: 0.5fr 0.45fr;
+    grid-template-rows: auto minmax(200px, min-content) minmax(100px, min-content) minmax(50px, min-content) auto;
+    row-gap: 0px;
     column-gap: 30px;
-    justify-content: center;
-    margin: 1rem 0;
+    margin: 1rem auto;
     .name{
         text-align: center;
         grid-column: 1/ span 2;
         grid-row: 1/ auto;
-        margin: 0;
+        margin: 0 0 20px 0;
     }
     .image{
         position: relative;
@@ -33,40 +32,104 @@
     }
     .sizes{
         @include flexible();
+        margin-top: 15px;
         flex-direction: column;
         grid-column: 2/ auto;
         grid-row: 2/ auto;
+        max-height: 350px;
         p{
             align-self: center;
+            margin: 0;
             padding-right: 20px;
         }
         ul{
-            width: 100%;
+            width: 80%;
             list-style-type: none;
             text-align: center;
             padding: 0;
-            margin: 0;
+            margin: 15px 0 0 0;
             overflow-y: auto;
-            /* li:hover,
-            li:active{
-                @include border(1);
-                background-color: #f7f7f7;
-            } */
+            li{
+                width: 70%;
+                padding: 0;
+                margin: 0 auto;      
+                .butSize{
+                    font-family: 'Rubik';
+                    font-size: 15px;
+                    background-color: white;
+                    width: 100%;
+                    height: 100%;
+                    @include border(0);
+                    padding: 6px 0;
+                    margin: 2px auto;
+                    &:hover{
+                        @include border(1);
+                        background-color: #f7f7f7;
+                    } 
+                }
+                .butActive{
+                    @include border(1);
+                    background-color: #f7f7f7;
+                } 
+            } 
+        }
+    }
+    .colors{
+        @include flexible();
+        grid-column: 2/ auto;
+        grid-row: 3/ auto;
+        margin-top: 15px;
+        flex-direction: column;
+        p{
+            margin: 0 0 10px 0;
+        }
+        ul{
+            @include flexible();
+            list-style-type: none;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            li{
+                display: inline-block;
+                min-width: 40%;
+                width: auto;
+                padding: 0;
+                margin: 3px 8px;  
+                .butColor{
+                    font-family: 'Rubik';
+                    font-size: 15px;
+                    background-color: white;
+                    width: 100%;
+                    height: 100%;
+                    @include border(0);
+                    padding: 10px 10px;
+                    &:hover{
+                        @include border(1);
+                        background-color: #f7f7f7;
+                    } 
+                    
+                }
+                .butActive{
+                    @include border(1);
+                    background-color: #f7f7f7;
+                } 
+            }
         }
     }
     .price{
         grid-column: 2/ auto;
-        grid-row: 3/ auto;
+        grid-row: 4/ auto;
         width: 70%;
         justify-self: center;
         text-align: center;
-        margin: 0;
+        margin: 20px 0;
         padding: 15px 30px;
         @include border(1);
     }
     .desc{
         grid-column: 1/ span 2;
-        grid-row: 4/ auto;
+        grid-row: 5/ auto;
     }
 }
 

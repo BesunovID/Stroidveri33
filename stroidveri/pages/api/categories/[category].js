@@ -1,4 +1,4 @@
-import {categories, catalogList} from '../catalogList'
+import {categories, catalogList, colors} from '../catalogList'
 
 
 export default function handler(req, res) {
@@ -17,5 +17,5 @@ export default function handler(req, res) {
           message: 'Not Found'
         });
     }
-    res.status(200).json({products, categoryHeader});
+    res.status(200).json({products, categoryHeader, colors});
 }

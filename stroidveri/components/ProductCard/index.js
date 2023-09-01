@@ -1,8 +1,9 @@
 import style from '../../styles/Product.module.scss'
 import Image from 'next/image'
+import CalcPrice from './calcPrice';
 
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, colors }) {
     return(
         <div className={style.cart}>
             <h1 className={style.name}>
@@ -15,19 +16,7 @@ export default function ProductCard({ product }) {
                     layout='fill'
                 />
             </div>
-            <div className={style.sizes}>
-                <p>Доступные размеры:</p>
-                <ul>
-                    {product.sizes.map((e, i) => (
-                        <li key={i}>
-                            {e}
-                        </li>
-                    ))}
-                </ul>
-            </div>
-            <p className={style.price}>
-                Цена: {product.price}
-            </p>
+            <CalcPrice prices={product.prices} colors={colors} />
             <span className={style.desc}>
                 Описание: <br />{product.desc}
             </span>

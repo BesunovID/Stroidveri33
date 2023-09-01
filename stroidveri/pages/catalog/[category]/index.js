@@ -13,7 +13,7 @@ export default function Category( {products, header} ) {
             </Head>
             <div className={style.upper}>
                 <div className={style.catNow}>
-                    <p>{header}</p>
+                    <h2>{header}</h2>
                 </div>
                 <Link href={`/catalog`}>
                     <button className={style.backBut}>Назад</button>
@@ -38,6 +38,7 @@ export async function getStaticProps(context) {
 
     const products = content.products;
     const header = content.categoryHeader;
+
     return{
         props: {
             products,
