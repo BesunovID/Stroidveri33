@@ -25,6 +25,12 @@ export default function CalcPrice({ prices, colors }) {
                 ))[0]['color1']);
             }
         }
+        else if (color.color != ''){
+            const arr = prices.map((e) => (
+                e[`color${color.color}`]
+            ));
+            setPrice(Math.min(...arr));
+        }
         else{
             setPrice(prices[0]['color1']);
         }

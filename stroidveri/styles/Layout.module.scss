@@ -1,12 +1,14 @@
 $border-width: 0.1rem;
 
 @mixin conteiner() {
-    max-width: 80rem;
-    width: 100%;
+    width: 80%;
     padding-left: 20px;
     padding-right: 20px;
     @media (min-width: 80rem) {
         margin-left: calc(100vw - 100%);
+    }
+    @media (max-width: 80rem) {
+        width: 100%;
     }
 }
 
@@ -46,13 +48,33 @@ $border-width: 0.1rem;
                 display: flex;
                 align-items: center;
                 height: 70%;
-                padding: 0 1vw;
-                margin: 0 0.2rem;
+                border: 0.1rem solid rgba(grey, 0);
+                border-radius: 0.4rem;
+                margin: 0 5px;
+                padding: 0 10px;
                 white-space: nowrap;
                 &:hover{
                     border: 0.1rem solid rgba(grey, 0.8);
-                    border-radius: 0.2rem;
-                    margin: 0 0.1rem;
+                }
+            }
+        }
+        .hamburger{
+            width: 100%;
+            .butOpen{
+                height: 50px;
+                width: 50px;
+            }
+            .menu{
+                position: relative;
+                width: 80%;
+                height: 100vh;
+                .butClose{
+                    position: absolute;
+                    right: 50px;
+                }
+                .navLinks{
+                    display: flex;
+                    flex-direction: column;
                 }
             }
         }
@@ -69,4 +91,20 @@ $border-width: 0.1rem;
 
 .footer{
     font-size: 10px;
+}
+
+
+.menuEnter{
+    transform: translateX(-100%);
+}
+.menuEnterActive{
+    transform: translateX(0);
+    transition: transform 800ms;
+}
+.menuExit{
+    transform: translateX(0);
+} 
+.menuExitActive{
+    transform: translateX(-100%);
+    transition: transform 800ms;
 }

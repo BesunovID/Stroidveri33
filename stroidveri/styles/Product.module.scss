@@ -65,6 +65,7 @@
                     &:hover{
                         @include border(1);
                         background-color: #f7f7f7;
+                        cursor: pointer;
                     } 
                 }
                 .butActive{
@@ -107,6 +108,7 @@
                     &:hover{
                         @include border(1);
                         background-color: #f7f7f7;
+                        cursor: pointer;
                     } 
                     
                 }
