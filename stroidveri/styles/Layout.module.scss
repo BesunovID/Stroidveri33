@@ -58,24 +58,40 @@ $border-width: 0.1rem;
                 }
             }
         }
-        .hamburger{
-            width: 100%;
-            .butOpen{
-                height: 50px;
-                width: 50px;
-            }
-            .menu{
+    }
+}
+.hamburger{
+    .butOpen{
+        height: 35px;
+        width: 35px;
+        margin: 10px;
+    }
+    .menu{
+        position: fixed;
+        background-color: white;
+        width: 100%;
+        max-width: 500px;
+        height: 100vh;
+        z-index: 11;
+        top: 0;
+        left: 0;
+        .butClose{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            height: 35px;
+            width: 35px;
+        }
+        .navLinks{
+            display: flex;
+            flex-direction: column;
+            margin-top: 5vh;
+            .pageLink{
                 position: relative;
-                width: 80%;
-                height: 100vh;
-                .butClose{
-                    position: absolute;
-                    right: 50px;
-                }
-                .navLinks{
-                    display: flex;
-                    flex-direction: column;
-                }
+                display: flex;
+                align-items: center;
+                margin: 5px 0;
+                padding: 5px 10px;
             }
         }
     }
