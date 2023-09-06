@@ -4,11 +4,9 @@ import Image from 'next/image'
 import {useEffect, useRef, useState} from 'react'
 import {CSSTransition} from 'react-transition-group'
 import { ANIMATION_TIME } from './constant'
-import ProductCard from '../ProductCard'
-import { colors } from '../../pages/api/catalogList'
 
 
-export default function LayoutModal({ product, isOpen, setOpen }) { 
+export default function LayoutModal({ children, isOpen, setOpen }) { 
     const [animation, setAnimation] = useState(false);
 
     useEffect(() => {
@@ -30,7 +28,9 @@ export default function LayoutModal({ product, isOpen, setOpen }) {
     return(
         <div className={style.container}>
             <Overlay animation={animation} setOpen={setOpen} />
-            <Content animation={animation} product={product} setOpen={setOpen} />
+            <Content animation={animation} setOpen={setOpen}> 
+                {children}
+            </Content>
         </div>
     )
 }
@@ -62,7 +62,7 @@ const Overlay = ({ animation, setOpen }) => {
 }
 
 
-const Content = ({ animation, product, setOpen}) => {
+const Content = ({ children, animation, setOpen}) => {
     
     const contentRef = useRef();
     const contentAnimationDots = {
@@ -93,10 +93,7 @@ const Content = ({ animation, product, setOpen}) => {
                         }} 
                     />
                 </div>
-                <ProductCard product={product} colors={colors} />
-                <Link href={`/catalog/${product.category}/${product.id}`}>
-                        <button className={style.onPage} onClick={() => setOpen(false)}>Перейти на страницу товара</button>
-                    </Link>
+                {children}
             </div>
         </CSSTransition>
     )

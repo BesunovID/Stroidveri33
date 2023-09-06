@@ -2,7 +2,7 @@ import LayoutModal from './LayoutModal'
 import Portal from './Portal';
 import { useMount } from './useMount'
 
-export default function Modal({ isOpen, setOpen, product }) { 
+export default function Modal({ children, isOpen, setOpen}) { 
     const { mounted } = useMount({isOpen});
 
     if (!mounted) {
@@ -11,7 +11,9 @@ export default function Modal({ isOpen, setOpen, product }) {
 
     return(
         <Portal>
-            <LayoutModal product={product} isOpen={isOpen} setOpen={setOpen} />
+            <LayoutModal isOpen={isOpen} setOpen={setOpen}>
+                {children}
+            </LayoutModal>
         </Portal>
     )
 }

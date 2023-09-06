@@ -1,17 +1,20 @@
 import styleProduct from '../../styles/Catalog.module.scss'
 import Image from 'next/image'
+import Link from 'next/link';
 import { useState } from "react"
 import Modal from '../Modal';
+import ProductCard from '../ProductCard';
+import { colors } from '../../pages/api/catalogList'
 
 export default function CatalogCard({ product }) {
     return(
-        <Cart>
+        <Cart product={product}>
             <Content product={product} />
         </Cart>
     )
 }
 
-const Cart = ({ children }) => {
+const Cart = ({ children, product }) => {
     
     const [isOpen, setOpen] = useState(false);
 
@@ -23,10 +26,12 @@ const Cart = ({ children }) => {
             >
                 {children}
             </div>
-            <Modal 
-                isOpen={isOpen} 
-                setOpen={setOpen} 
-                product={children.props.product} />
+            <Modal isOpen={isOpen} setOpen={setOpen}>
+                <ProductCard product={product} colors={colors} />
+                <Link href={`/catalog/${product.category}/${product.id}`}>
+                    <button className='onPage' onClick={() => setOpen(false)}>Перейти на страницу товара</button>
+                </Link>
+            </Modal>
         </>
     )
 }
