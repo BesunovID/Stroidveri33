@@ -47,21 +47,36 @@ export default function Header() {
     )
 }
 
-const MenuLinks = () => {
+export const MenuLinks = ({mobileModalOpen}) => {
     return(
         <div className={style.navLinks}>
-            <Link href='/catalog'>
-                <a className={style.pageLink}>Каталог</a>
-            </Link>
-            <Link href='/contacts'>
-                <a className={style.pageLink}>Контакты</a>
-            </Link>
-            <Link href='/delivery'>
-                <a className={style.pageLink}>Доставка</a>
-            </Link>
-            <Link href='/about'>
-                <a className={style.pageLink}>О компании</a>
-            </Link>
+            {PAGES.map((page) => (
+                <Link href={page.href}>
+                    <a className={style.pageLink} 
+                        onClick={mobileModalOpen != undefined ? (() => mobileModalOpen(false)) : null}
+                    >
+                    {page.name}</a>
+                </Link>
+            ))}
         </div>
     )
 }
+
+const PAGES = [
+    {
+        'href': '/catalog',
+        'name': 'Каталог'
+    },
+    {
+        'href': '/contacts',
+        'name': 'Контакты'
+    },
+    {
+        'href': '/delivery',
+        'name': 'Доставка'
+    },
+    {
+        'href': '/about',
+        'name': 'О компании'
+    }
+]

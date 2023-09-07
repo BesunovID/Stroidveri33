@@ -44,18 +44,20 @@ $border-width: 0.1rem;
             align-items: center;
             @extend .logo;
             .pageLink{
-                position: relative;
-                display: flex;
-                align-items: center;
-                height: 70%;
-                border: 0.1rem solid rgba(grey, 0);
-                border-radius: 0.4rem;
-                margin: 0 5px;
-                padding: 0 10px;
-                white-space: nowrap;
-                &:hover{
-                    border: 0.1rem solid rgba(grey, 0.8);
-                }
+                
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    height: 70%;
+                    border: 0.1rem solid rgba(grey, 0);
+                    border-radius: 0.4rem;
+                    margin: 0 5px;
+                    padding: 0 10px;
+                    white-space: nowrap;
+                    &:hover{
+                        border: 0.1rem solid rgba(grey, 0.8);
+                    }
+                
             }
         }
     }
