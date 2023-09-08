@@ -33,22 +33,18 @@ export default function CalcPrice({ prices, colors }) {
                 ))[0][`color${activeColor.colorID}`]);
             }
             else {
-              //  setColor({colorName: colors[0].color, colorID: colors[0].colorID});
                 setPrice(prices.filter((e) => (
                     e.size === activeSize.sizeName
                 ))[0]['color1']);
             }
         }
         else if (activeColor.colorName != ''){
-          //  setSize({sizeName: prices[0].size, sizeID: 0});
             const arr = prices.map((e) => (
                 e[`color${activeColor.colorID}`]
             ));
             setPrice(Math.min(...arr));
         }
         else{
-       //     setSize({sizeName: prices[0].size, sizeID: 0});
-        //    setColor({colorName: colors[0].color, colorID: colors[0].colorID});
             setPrice(prices[0]['color1']);
         }
 

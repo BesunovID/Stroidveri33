@@ -50,8 +50,8 @@ export default function Header() {
 export const MenuLinks = ({mobileModalOpen}) => {
     return(
         <div className={style.navLinks}>
-            {PAGES.map((page) => (
-                <Link href={page.href}>
+            {PAGES.map((page, i) => (
+                <Link key={i} href={page.href}>
                     <a className={style.pageLink} 
                         onClick={mobileModalOpen != undefined ? (() => mobileModalOpen(false)) : null}
                     >

@@ -1,5 +1,4 @@
 import style from './Modal.module.scss'
-import Link from 'next/link'
 import Image from 'next/image'
 import {useEffect, useRef, useState} from 'react'
 import {CSSTransition} from 'react-transition-group'
@@ -27,10 +26,12 @@ export default function LayoutModal({ children, isOpen, setOpen }) {
 
     return(
         <div className={style.container}>
-            <Overlay animation={animation} setOpen={setOpen} />
-            <Content animation={animation} setOpen={setOpen}> 
-                {children}
-            </Content>
+            <div className={style.wrapper}>
+                <Overlay animation={animation} setOpen={setOpen} />
+                <Content animation={animation} setOpen={setOpen}> 
+                    {children}
+                </Content>
+            </div>
         </div>
     )
 }

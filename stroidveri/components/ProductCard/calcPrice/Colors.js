@@ -13,7 +13,6 @@ export default function Colors({colors, activeColor, setColor, windowWidth}) {
     return(
         <div className={style.colors}>
             <p className={style.prop_name}>Обработка:</p>
-            <ul className={style.props}>
                 <ColorsView 
                     windowWidth={windowWidth} 
                     openModal={openModal} 
@@ -22,7 +21,6 @@ export default function Colors({colors, activeColor, setColor, windowWidth}) {
                     activeColor={activeColor}
                     setColor={setColor}
                 />
-            </ul>
         </div>
     )
 }
@@ -68,14 +66,14 @@ const ColorsView = ({ windowWidth,
                             )}
                         >
                             {activeColor.colorName}
-                        </button>
-                        <div className={style.selectImage}>
-                            <Image 
-                                src={'/vercel.svg'} 
-                                layout='fill'
-                                alt={'select'}
-                            />
-                        </div>      
+                            <div className={style.selectImage}>
+                                <Image 
+                                    src={'/vercel.svg'} 
+                                    layout='fill'
+                                    alt={'select'}
+                                />
+                            </div> 
+                        </button>     
                     </li>
                     
                 </ul>

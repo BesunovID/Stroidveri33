@@ -29,7 +29,7 @@ const Cart = ({ children, product }) => {
             <Modal isOpen={isOpen} setOpen={setOpen}>
                 <ProductCard product={product} colors={colors} />
                 <Link href={`/catalog/${product.category}/${product.id}`}>
-                    <button className='onPage' onClick={() => setOpen(false)}>Перейти на страницу товара</button>
+                    <button className={styleProduct.onPage} onClick={() => setOpen(false)}>Перейти на страницу товара</button>
                 </Link>
             </Modal>
         </>

@@ -20,11 +20,19 @@
             @include flexible();
             @include border(0);
             flex: 0 1 35%;
+            flex-direction: column;
             margin: 2rem;
+            @media (max-width: 700px) {
+                flex: 0 1 45%;
+                margin: 0;
+            }
             .image-wrapper{
                 position: relative;
                 width: 50%;
                 height: 8rem;
+                @media (max-width: 700px) {
+                    display: none;
+                }
             }
             h2{
                 text-align: center;
@@ -76,6 +84,19 @@
         }
     } 
 }
+
+.onPage{
+    @include border(1);
+    background-color: white;
+    padding: 10px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 15px;
+    &:hover{
+        @include border(1);
+        background-color: #f7f7f7;
+    }
+}
+
 
 
 

@@ -63,14 +63,14 @@ const SizesView = ({ windowWidth,
                             onClick={() => (setOpenModal(true))}
                         >
                             {activeSize.sizeName}
+                            <div className={style.selectImage}>
+                                <Image 
+                                    src={'/vercel.svg'} 
+                                    layout='fill'
+                                    alt={'select'}
+                                />
+                            </div>  
                         </button>
-                        <div className={style.selectImage}>
-                            <Image 
-                                src={'/vercel.svg'} 
-                                layout='fill'
-                                alt={'select'}
-                            />
-                        </div>  
                     </li>
                 </ul>
                 <Modal isOpen={openModal} setOpen={setOpenModal}>
