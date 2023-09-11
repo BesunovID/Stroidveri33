@@ -39,9 +39,15 @@ const LazyPost = ({ data }) => {
     useEffect(() => {
         const post = boxRef.current;
 
-        const observer = new IntersectionObserver(([entry]) => {
-            setIntersecting(entry.isIntersecting);
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setIntersecting(true);
+                    observer.unobserve(entry.target)
+                }
+            })
         }, options);
+
         observer.observe(post);
 
         return () => observer.unobserve(post);
@@ -49,7 +55,8 @@ const LazyPost = ({ data }) => {
 
     return(
         <div ref={boxRef} className={style.postBox}>
-            {isIntersecting ? <Post data={data} start={isIntersecting} /> : <Placeholder />}
+            <Post data={data} start={isIntersecting} />
+            {!isIntersecting ? <Placeholder /> : null}
         </div>
     )
 }
@@ -60,8 +67,6 @@ const Post = ({ data, start }) => {
     const postAnimationDots = {
         enter: style.postEnter,
         enterActive: style.postEnterActive,
-        exit: style.postExit,
-        exitActive: style.postExitActive
     };
 
     return(
@@ -69,7 +74,7 @@ const Post = ({ data, start }) => {
             in={start}
             nodeRef={postRef}
             classNames={postAnimationDots}
-            timeout={800}
+            timeout={1300}
             mountOnEnter
         > 
             <div ref={postRef} key={data.id} className={(data.id % 2) == 0 ?
