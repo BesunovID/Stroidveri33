@@ -4,9 +4,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import HamburgerMenu from './HamburgerMenu'
 import { useState, useEffect } from 'react';
+import Form from '../Form'
+import Modal from '../Modal'
 
 export default function Header() {
     const [windowWidth, setWindowWidth] = useState('portable');
+   
 
     const resizeHandler = () => {
         if ((windowWidth === 'portable') && (window.screen.width <= 700)){
@@ -48,6 +51,7 @@ export default function Header() {
 }
 
 export const MenuLinks = ({mobileModalOpen}) => {
+    const [isOpenModal, setOpenModal] = useState(false);
     return(
         <div className={style.navLinks}>
             {PAGES.map((page, i) => (
@@ -58,6 +62,10 @@ export const MenuLinks = ({mobileModalOpen}) => {
                     {page.name}</a>
                 </Link>
             ))}
+            <button className='form' onClick={() => setOpenModal(true)} />
+            <Modal isOpen={isOpenModal} setOpen={setOpenModal}>
+                <Form setOpenModal={setOpenModal}/>
+            </Modal>
         </div>
     )
 }

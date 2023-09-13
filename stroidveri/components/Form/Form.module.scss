@@ -1,0 +1,49 @@
+@mixin border($opacity: 0) {
+    border: 0.15rem solid rgba(grey, $opacity);
+    border-radius: 0.7rem;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    .field{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin: 10px;
+        &_name{
+            flex: 1 0 auto;
+            font-size: 15px;
+            margin: 20px 10px;
+        }
+        &_input{
+            font-family: 'Rubik', sans-serif;
+            font-size: 15px;
+            flex: 0 0 80%;
+            margin: 10px 0;
+            @include border(1);
+        }
+        &_inval{
+            @include border(1);
+            border-color: red;
+        }
+        
+    }
+    .message{
+        flex-direction: column;
+        min-height: 30vh;
+        margin: 0;
+    }
+    .btnSend{
+        font-family: 'Rubik', sans-serif;
+        @include border(0);
+        width: 60%;
+        margin: 20px;
+        height: 45px;
+        &:hover{
+            @include border(1);
+        }
+    }
+}
