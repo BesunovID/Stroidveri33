@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import style from '../../../styles/Product.module.scss'
 import Sizes from "./Sizes";
 import Colors from "./Colors";
+import { ButtonFeedBack } from "../../Layout/Header";
 
 export default function CalcPrice({ prices, colors }) {
     const [windowWidth, setWindowWidth] = useState('portable');
@@ -66,18 +67,24 @@ export default function CalcPrice({ prices, colors }) {
 
 
 const Price = ({ size, color, price }) => {
-    if (size === '' || color === '') {
+   // if (size === '' || color === '') {
         return(
-            <p className={style.price}>
-                Цена от: {price}
-            </p>
+            <div className={style.price_wrap}>
+                <p className={style.price}>
+                    Цена от: {price}
+                </p>
+                <p className={style.text}>
+                    для уточнения цены 
+                </p>
+                <ButtonFeedBack />
+            </div>
         )
-    } else {
+  /*  } else {
         return(
             <p className={style.price}>
                 Цена: {price}
             </p>
         )
-    }
+    } */
     
 }

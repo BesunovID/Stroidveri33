@@ -2,7 +2,7 @@ import style from '../../styles/Layout.module.scss'
 import { useState, useRef, useEffect } from 'react'
 import { useMountMenu } from './useMountMenu'
 import {CSSTransition} from 'react-transition-group'
-import { MenuLinks } from './Header'
+import { MenuLinks, ButtonFeedBack } from './Header'
 
 export default function HamburgerMenu() {
     const [isOpen, setOpen] = useState(false);
@@ -13,6 +13,7 @@ export default function HamburgerMenu() {
             <button className={style.butOpen} onClick={() => setOpen(true)} />
             {mounted && <Menu isOpen={isOpen} setOpen={setOpen}>
                 <MenuLinks mobileModalOpen={setOpen} />
+                <ButtonFeedBack />
             </Menu>}
         </div>
     )

@@ -10,7 +10,8 @@ export default function Form({ setOpenModal }) {
             max_lenght: 20,
             type: 'text',
             valid: true,
-            patern: ' /^[A-ZА-ЯЁ]+$/i'
+            patern: /^[A-ZА-ЯЁ]+$/i,
+            invalidSymbol: /\d+/g
         },
         user_email: {
             name: 'Email',
@@ -19,7 +20,8 @@ export default function Form({ setOpenModal }) {
             max_lenght: 40,
             type: 'email',
             valid: true,
-            patern: ' /^[A-ZА-ЯЁ]+$/i'
+            patern: /^[A-ZА-ЯЁ]+$/i,
+            invalidSymbol: /#?/g
         },
         user_phone: {
             name: 'Телефон',
@@ -28,7 +30,8 @@ export default function Form({ setOpenModal }) {
             max_lenght: 11,
             type: 'tel',
             valid: true,
-            patern: '\d'
+            patern: /^(\+?7|8)?9\d{9}$/,
+            invalidSymbol: /^[A-ZА-ЯЁ]+$/i
         },
         user_message: {
             name: 'Сообщение',
@@ -37,16 +40,35 @@ export default function Form({ setOpenModal }) {
             max_lenght: 300,
             type: 'text',
             valid: true,
-            patern: ' /^[A-ZА-ЯЁ]+$/i'
+            patern: /^[A-ZА-ЯЁ]+$/i,
+            invalidSymbol: /#?/g
         },
     })
+
+    const handleChange = (e) => {
+        const newValue = e.target.value.replace(formData[e.target.name].invalidSymbol, '');
+        setFormData({
+            ...formData, 
+            [e.target.name]: {
+                ...formData[e.target.name],
+                value: newValue,
+                valid: validation(e.target.name, newValue),
+            }
+        });
+    }
 
     const validation = (prop, value) => {
         return value.length > formData[prop].min_lenght;
     }
 
+
     async function sendMess(e) {
         e.preventDefault();
+
+        for (let key in formData) {
+            if ((formData[key].value === '') || (!formData[key].valid))
+                return null;
+        }
 
         const token = '6413660573:AAHiyCX3gGq-Y4kn85jGgqmscycXBIPmlLk';
         const url = `https://api.telegram.org/bot${token}/sendMessage`;
@@ -74,18 +96,6 @@ export default function Form({ setOpenModal }) {
         setOpenModal(false);
     }
 
-
-    const handleChange = (e) => {
-        setFormData({
-            ...formData, 
-            [e.target.name]: {
-                ...formData[e.target.name],
-                value: e.target.value,
-                valid: validation(e.target.name, e.target.value),
-            }
-        });
-    }
-
     return(
         <>
             <h1>Обратная связь</h1>
@@ -95,19 +105,36 @@ export default function Form({ setOpenModal }) {
                                 `${style.field} ${style.message}` :
                                 style.field}>
                         <p className={style.field_name}>{formData[data].name}:</p>
-                        <input 
-                            className={formData[data].valid == true ?
-                                style.field_input :
-                                `${style.field_input} ${style.field_inval}`}
-                            type={formData[data].type}
-                            name={data}
-                            value={formData[data].value} 
-                            onChange={(e) => handleChange(e)}
-                            minLength={formData[data].min_lenght}
-                            maxLength={formData[data].max_lenght}
-                            pattern={formData[data].patern}
-                            required
-                        />
+                        {data === 'user_message' ? (
+                            <textarea
+                                className={formData[data].valid == true ?
+                                    style.field_input :
+                                    `${style.field_input} ${style.field_inval}`}
+                                type={formData[data].type}
+                                name={data}
+                                value={formData[data].value} 
+                                onChange={(e) => handleChange(e)}
+                                minLength={formData[data].min_lenght}
+                                maxLength={formData[data].max_lenght}
+                                pattern={formData[data].patern}
+                                required
+                            ></textarea>
+                        ) : (
+                            <input 
+                                className={formData[data].valid == true ?
+                                    style.field_input :
+                                    `${style.field_input} ${style.field_inval}`}
+                                type={formData[data].type}
+                                name={data}
+                                value={formData[data].value} 
+                                onChange={(e) => handleChange(e)}
+                                minLength={formData[data].min_lenght}
+                                maxLength={formData[data].max_lenght}
+                                pattern={formData[data].patern}
+                                required
+                            />
+                        )}
+                        
                     </div>
                 ))}
                 <button 

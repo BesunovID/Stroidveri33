@@ -9,13 +9,12 @@ import Modal from '../Modal'
 
 export default function Header() {
     const [windowWidth, setWindowWidth] = useState('portable');
-   
 
     const resizeHandler = () => {
-        if ((windowWidth === 'portable') && (window.screen.width <= 700)){
+        if ((windowWidth === 'portable') && (window.innerWidth <= 700)){
             setWindowWidth('modile');
         } 
-        else if ((windowWidth === 'modile') && (window.screen.width > 700)){
+        else if ((windowWidth === 'modile') && (window.innerWidth > 700)){
             setWindowWidth('portable');
         }
     }
@@ -40,9 +39,11 @@ export default function Header() {
                             </Link>
                         </div>
                         <MenuLinks />
+                        <ButtonFeedBack />
                     </>) :
                     (<HamburgerMenu>
                         <MenuLinks />
+                        <ButtonFeedBack />
                     </HamburgerMenu>)
                 }
             </nav>
@@ -51,7 +52,6 @@ export default function Header() {
 }
 
 export const MenuLinks = ({mobileModalOpen}) => {
-    const [isOpenModal, setOpenModal] = useState(false);
     return(
         <div className={style.navLinks}>
             {PAGES.map((page, i) => (
@@ -62,13 +62,24 @@ export const MenuLinks = ({mobileModalOpen}) => {
                     {page.name}</a>
                 </Link>
             ))}
-            <button className='form' onClick={() => setOpenModal(true)} />
-            <Modal isOpen={isOpenModal} setOpen={setOpenModal}>
-                <Form setOpenModal={setOpenModal}/>
-            </Modal>
         </div>
     )
 }
+
+export const ButtonFeedBack = () => {
+    const [isOpenModal, setOpenModal] = useState(false);
+    return(
+        <>
+            <button className={style.feedBack} onClick={() => setOpenModal(true)}>
+                Отправить заявку
+            </button>
+            <Modal isOpen={isOpenModal} setOpen={setOpenModal}>
+                <Form setOpenModal={setOpenModal}/>
+            </Modal>
+        </>
+    )
+}
+
 
 const PAGES = [
     {
