@@ -1,6 +1,6 @@
 import Head from "next/head"
 import Image from "next/image"
-import { useEffect, useState, useRef, forwardRef } from "react"
+import { useEffect, useState, useRef } from "react"
 import style from "../styles/About.module.scss"
 import {CSSTransition} from 'react-transition-group'
 
@@ -21,7 +21,7 @@ const PostsWrapper = ({ posts }) => {
     return(
         <div className={style.advantages}>
             {posts.lenght !== 0 ? (
-                posts.map((post) => ( 
+                posts.map((post) => (
                     <LazyPost>
                         <Post data={post} />
                     </LazyPost>
@@ -62,22 +62,24 @@ const LazyPost = ({ children }) => {
 
     return(
         <div ref={boxRef} className={style.postBox}>
-            <PostWrapper start={isIntersecting}>
-                {children}
-            </PostWrapper>
-            {!isIntersecting ? <Placeholder /> : null}
+            {!isIntersecting ? <Placeholder /> : children}
         </div>
     )
 }
 
-const PostWrapper = ({ children, start }) => {
-    const postRef = useRef();
-
+const Post = ({ data }) => {
+    const postRef = useRef(null);
+    const [start, setStart] = useState(false);
+    
     const postAnimationDots = {
         enter: style.postEnter,
         enterActive: style.postEnterActive,
     };
 
+    useEffect(() => {
+        setStart(true);
+    }, [])
+    
     return(
         <CSSTransition 
             in={start}
@@ -86,35 +88,29 @@ const PostWrapper = ({ children, start }) => {
             timeout={1300}
             mountOnEnter
         > 
-            {children}
-        </CSSTransition>  
-    )
-}
-
-const Post = ({ data }) => {
-    return(
-        <div key={data.id} className={(data.id % 2) == 0 ?
-            style.post : `${style.post} ${style.left}`}>
-            {data.id != '1' ? (<div className={style.image}>
-                <Image
-                    src={data.image}
-                    alt={data.head}
-                    layout='fill'
-                />
-            </div>) : null}
-            <div className={style.data}>
-                <div className={style.name}>
-                    <p>{data.head}</p>
-                </div>
-                <div className={style.description}>
-                    <p>{data.desc}</p>
+            <div ref={postRef} key={data.id} className={(data.id % 2) == 0 ?
+                style.post : `${style.post} ${style.left}`}>
+                {data.id != '1' ? (<div className={style.image}>
+                    <Image
+                        src={data.image}
+                        alt={data.head}
+                        layout='fill'
+                    />
+                </div>) : null}
+                <div className={style.data}>
+                    <div className={style.name}>
+                        <p>{data.head}</p>
+                    </div>
+                    <div className={style.description}>
+                        <p>{data.desc}</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </CSSTransition> 
     )
 }
 
-const Placeholder = () => {
+const Placeholder = ({}) => {
     return( 
         <div className={style.placeHolder}>
         </div>
