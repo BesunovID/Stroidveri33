@@ -238,7 +238,9 @@
 
 .backBut{
     @include border(0);
-    margin: 2rem auto 0 80%;
+    position: relative;
+    margin: 10px 0;
+    float: right;
     width: 8rem;
     height: 3rem;
     &:hover{

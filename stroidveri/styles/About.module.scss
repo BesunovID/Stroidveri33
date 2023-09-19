@@ -10,12 +10,20 @@ $border: 1px solid black;
         width: 100%;
         min-height: 35vh;
         margin-bottom: 20px;
+        @media (max-width: 450px) {
+            min-height: 200px;
+            margin: 10px;
+        }
         .post{
             position: absolute;
             display: flex;
             justify-content: space-between;
             height: 100%;
             width: 100%;
+            @media (max-width: 450px) {
+                position: relative;
+                height: auto;
+            }
            /* background: linear-gradient(170deg,
             rgba(255,255,255,1) 40%,
             rgba(231,231,231,1) 100%); */
@@ -23,6 +31,9 @@ $border: 1px solid black;
                 position: relative;
                 flex: 1 0 30%;
                 margin: 0 2rem;
+                @media (max-width: 450px) {
+                    display: none;
+                }
             }
             .data{
                 display: flex;
@@ -30,6 +41,9 @@ $border: 1px solid black;
                 justify-content: center;
                 flex: 1 1 60%;
                 margin: 0 2rem;
+                @media (max-width: 450px) {
+                    margin: 10px;
+                }
                 .name{
                     border: none;
                 }
@@ -59,6 +73,10 @@ $border: 1px solid black;
                 height: 72%;
                 border-right: $border;
                 border-bottom: $border;
+                @media (max-width: 450px) {
+                    width: 97%;
+                    height: 80%;
+                }
             }
         }
         .placeHolder{

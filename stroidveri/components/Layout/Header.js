@@ -29,25 +29,37 @@ export default function Header() {
     }, [windowWidth]);
 
     return (
-        <header className={style.header}>
-            <nav className={style.nav}>
-                {windowWidth === 'portable' ? 
-                    (<>
-                        <div className={style.logo}>
-                            <Link href='/'>
-                                <a><Image src={logo} alt='Стройдвери 33' /></a>
-                            </Link>
-                        </div>
-                        <MenuLinks />
-                        <ButtonFeedBack />
-                    </>) :
-                    (<HamburgerMenu>
-                        <MenuLinks />
-                        <ButtonFeedBack />
-                    </HamburgerMenu>)
-                }
-            </nav>
-        </header>
+        <>
+            {windowWidth === 'portable' ?
+            (<div className={style.contactsHead}>
+                <p>
+                    <div className={style.tel}>
+                        <span>8-930-031-00-53</span> 
+                        <span>8-904-596-33-84</span> 
+                    </div>
+                    <span className={style.mail}>stroidveri33@mail.ru</span>
+                </p>
+            </div>) : null}
+            <header className={style.header}>
+                <nav className={style.nav}>
+                    {windowWidth === 'portable' ? 
+                        (<>
+                            <div className={style.logo}>
+                                <Link href='/'>
+                                    <a><Image src={logo} alt='Стройдвери 33' /></a>
+                                </Link>
+                            </div>
+                            <MenuLinks />
+                            <ButtonFeedBack />
+                        </>) :
+                        (<HamburgerMenu>
+                            <MenuLinks />
+                            <ButtonFeedBack />
+                        </HamburgerMenu>)
+                    }
+                </nav>
+            </header>
+        </>
     )
 }
 

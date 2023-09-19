@@ -22,7 +22,7 @@ const PostsWrapper = ({ posts }) => {
         <div className={style.advantages}>
             {posts.lenght !== 0 ? (
                 posts.map((post) => (
-                    <LazyPost>
+                    <LazyPost key={post.id}>
                         <Post data={post} />
                     </LazyPost>
                 ))

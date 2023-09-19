@@ -8,10 +8,10 @@ export default function CalcPrice({ prices, colors }) {
     const [windowWidth, setWindowWidth] = useState('portable');
     
     const resizeHandler = () => {
-        if ((windowWidth === 'portable') && (window.screen.width <= 700)){
+        if ((windowWidth === 'portable') && (window.innerWidth <= 700)){
             setWindowWidth('mobile');
         } 
-        else if ((windowWidth === 'mobile') && (window.screen.width > 700)){
+        else if ((windowWidth === 'mobile') && (window.innerWidth > 700)){
             setWindowWidth('portable');
         }
     }
