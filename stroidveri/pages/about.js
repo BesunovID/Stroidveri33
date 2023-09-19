@@ -71,9 +71,14 @@ const Post = ({ data }) => {
     const postRef = useRef(null);
     const [start, setStart] = useState(false);
     
-    const postAnimationDots = {
-        enter: style.postEnter,
-        enterActive: style.postEnterActive,
+    const postAnimationDotsR = {
+        enter: style.postEnterR,
+        enterActive: style.postEnterRActive,
+    };
+
+    const postAnimationDotsL = {
+        enter: style.postEnterL,
+        enterActive: style.postEnterLActive,
     };
 
     useEffect(() => {
@@ -84,12 +89,15 @@ const Post = ({ data }) => {
         <CSSTransition 
             in={start}
             nodeRef={postRef}
-            classNames={postAnimationDots}
-            timeout={1300}
+            classNames={(data.id % 2) == 0 ? postAnimationDotsL : postAnimationDotsR}
+            timeout={1600}
             mountOnEnter
         > 
-            <div ref={postRef} key={data.id} className={(data.id % 2) == 0 ?
-                style.post : `${style.post} ${style.left}`}>
+            <div 
+                ref={postRef} 
+                key={data.id} 
+                className={(data.id % 2) == 0 ?
+                    style.post : `${style.post} ${style.left}`}>
                 {data.id != '1' ? (<div className={style.image}>
                     <Image
                         src={data.image}
