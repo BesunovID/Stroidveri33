@@ -3,7 +3,7 @@ export default function handler(req, res) {
     res.status(200).json(posts)
 }
 
-const posts = [
+export const posts = [
     {
         'id':  '1',
         'head': '',

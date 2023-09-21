@@ -21,7 +21,7 @@ const Cart = ({ children, product }) => {
     return(
         <>
             <div
-                className={`${styleProduct.cart} `}
+                className={styleProduct.cart}
                 onClick={() => {setOpen(true)}}
             >
                 {children}
@@ -43,8 +43,7 @@ const Content = ({ product }) => {
                 <Image 
                     src={product.image} 
                     alt={product.name} 
-                    width={200}
-                    height={300}
+                    layout='fill'
                 />
             </div>
             <h3 className={styleProduct.cart_name}>

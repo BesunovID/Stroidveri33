@@ -61,29 +61,37 @@
 .products{
     @include flexible();
     flex-wrap: wrap;
-    .cart{
-        @include border(0);
-        @include flexible();
-        flex-direction: column;
-        background-color: #f2f2f2;
-        flex: 0 1 250px;
-        margin: 1rem;
-        padding: 0 0.5rem;
-        &_image{
-            border: none;
-        }
-        &_name{
-            font-size: medium;
-            width: 100%;
-            text-align: center;
-            padding-top: 0.5rem;
-            border-top: 0.1rem solid rgba(grey, 0.8);
-        }
-        &:hover{
-            @include border(1);
-        }
-    } 
 }
+
+.cart{
+    @include border(0);
+    @include flexible();
+    flex-direction: column;
+    background-color: #f2f2f2;
+    flex: 0 1 250px;
+    min-height: 320px;
+    max-height: 400px;
+    height: 20vmax;
+    margin: 1rem;
+    padding: 0 0.5rem;
+    &_image{
+        flex: 1 1 100%;
+        border: none;
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+    &_name{
+        font-size: medium;
+        width: 100%;
+        text-align: center;
+        padding-top: 0.5rem;
+        border-top: 0.1rem solid rgba(grey, 0.8);
+    }
+    &:hover{
+        @include border(1);
+    }
+} 
 
 .onPage{
     @include border(1);

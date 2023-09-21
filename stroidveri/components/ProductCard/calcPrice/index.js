@@ -54,7 +54,7 @@ export default function CalcPrice({ prices, colors }) {
         return () => {
             window.removeEventListener('resize', resizeHandler);
         }
-    });
+    }, [activeSize.sizeName, activeColor.colorName, activeColor.colorID, resizeHandler, prices]);
     
     return(
         <>
