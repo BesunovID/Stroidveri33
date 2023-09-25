@@ -6,44 +6,46 @@ export default function Form({ setOpenModal }) {
         user_name: {
             name: 'Имя',
             value: '',
-            min_lenght: 2,
+            min_lenght: 1,
             max_lenght: 20,
             type: 'text',
-            valid: true,
+            valid: false,
             patern: /^[A-ZА-ЯЁ]+$/i,
             invalidSymbol: /\d+/g
-        },
-        user_email: {
-            name: 'Email',
-            value: '',
-            min_lenght: 6,
-            max_lenght: 40,
-            type: 'email',
-            valid: true,
-            patern: /^[A-ZА-ЯЁ]+$/i,
-            invalidSymbol: /#?/g
         },
         user_phone: {
             name: 'Телефон',
             value: '',
-            min_lenght: 9,
+            min_lenght: 8,
             max_lenght: 11,
             type: 'tel',
-            valid: true,
+            valid: false,
             patern: /^(\+?7|8)?9\d{9}$/,
             invalidSymbol: /^[A-ZА-ЯЁ]+$/i
+        },
+        user_email: {
+            name: 'Email',
+            value: '',
+            min_lenght: 5,
+            max_lenght: 40,
+            type: 'email',
+            valid: false,
+            patern: /^[A-ZА-ЯЁ]+$/i,
+            invalidSymbol: /#?/g
         },
         user_message: {
             name: 'Сообщение',
             value: '',
-            min_lenght: 5,
+            min_lenght: 4,
             max_lenght: 300,
             type: 'text',
-            valid: true,
+            valid: false,
             patern: /^[A-ZА-ЯЁ]+$/i,
             invalidSymbol: /#?/g
         },
-    })
+    });
+
+    const [errorForm, setErrorForm] = useState(false);
 
     const handleChange = (e) => {
         const newValue = e.target.value.replace(formData[e.target.name].invalidSymbol, '');
@@ -52,24 +54,32 @@ export default function Form({ setOpenModal }) {
             [e.target.name]: {
                 ...formData[e.target.name],
                 value: newValue,
-                valid: validation(e.target.name, newValue),
+                valid: validationField(e.target.name, newValue),
             }
         });
     }
 
-    const validation = (prop, value) => {
+    const validationField = (prop, value) => {
         return value.length > formData[prop].min_lenght;
     }
 
+    const validationForm = (form) => {
+        form.preventDefault();
 
-    async function sendMess(e) {
-        e.preventDefault();
-
-        for (let key in formData) {
-            if ((formData[key].value === '') || (!formData[key].valid))
-                return null;
+        if (formData.user_name.valid && 
+            formData.user_message.valid && (
+                formData.user_phone.valid || formData.user_email.valid
+            )) {
+            sendMess();
         }
+        else {
+            setErrorForm(true);
+            return null;
+        } 
+    }
 
+
+    async function sendMess() {
         const token = '6413660573:AAHiyCX3gGq-Y4kn85jGgqmscycXBIPmlLk';
         const url = `https://api.telegram.org/bot${token}/sendMessage`;
 
@@ -91,6 +101,7 @@ export default function Form({ setOpenModal }) {
         await fetch(url, requestOption)
             .then((response) => response.json())
             .then((data) => {
+                console.log(data);
             }); 
         
         setOpenModal(false);
@@ -104,10 +115,10 @@ export default function Form({ setOpenModal }) {
                     <div key={data} className={data === 'user_message' ?
                                 `${style.field} ${style.message}` :
                                 style.field}>
-                        <p className={style.field_name}>{formData[data].name}:</p>
+                        <label className={style.field_name}>{formData[data].name}:</label>
                         {data === 'user_message' ? (
                             <textarea
-                                className={formData[data].valid == true ?
+                                className={formData[data].valid || formData[data].value === ''?
                                     style.field_input :
                                     `${style.field_input} ${style.field_inval}`}
                                 type={formData[data].type}
@@ -118,10 +129,10 @@ export default function Form({ setOpenModal }) {
                                 maxLength={formData[data].max_lenght}
                                 pattern={formData[data].patern}
                                 required
-                            ></textarea>
+                            />
                         ) : (
                             <input 
-                                className={formData[data].valid == true ?
+                                className={formData[data].valid || formData[data].value === '' ?
                                     style.field_input :
                                     `${style.field_input} ${style.field_inval}`}
                                 type={formData[data].type}
@@ -134,12 +145,18 @@ export default function Form({ setOpenModal }) {
                                 required
                             />
                         )}
-                        
+                        {(!formData[data].valid && errorForm) ? 
+                            <p className={style.invalidField}>
+                                Заполните поле. От {formData[data].min_lenght + 1} до {formData[data].max_lenght} символов.
+                            </p> :
+                            null
+                        }
+                       
                     </div>
                 ))}
                 <button 
                     className={style.btnSend} 
-                    onClick={(e) => sendMess(e)}
+                    onClick={(e) => validationForm(e)}
                 >
                     Отправить
                 </button>

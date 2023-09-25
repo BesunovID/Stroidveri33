@@ -17,6 +17,7 @@
     .field{
         display: flex;
         justify-content: space-between;
+        position: relative;
         width: 100%;
         margin: 10px;
         @media (max-width: 450px) {
@@ -45,6 +46,13 @@
         &_inval{
             @include border(1);
             border-color: rgba(red, 0.6);
+        }
+        .invalidField{
+            font-size: 13px;
+            color: rgba(red, 0.8);
+            margin: 0 auto 0 21%;
+            position: absolute;
+            top: 50px;
         }
         
     }

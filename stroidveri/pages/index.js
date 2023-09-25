@@ -37,6 +37,12 @@ export default function Home({ doors, furnitures }) {
             {doors.products.slice(0, 4).map((e) => (
               <CatalogCard product={e} />
             ))}
+            <Link href={'/'}>
+              <button
+                className={style.more}
+                >Больше...
+              </button>
+            </Link>
           </div>
         </div>
         <div className={style.category}>
@@ -50,6 +56,12 @@ export default function Home({ doors, furnitures }) {
             {furnitures.products.slice(0, 4).map((e) => (
               <CatalogCard product={e} />
             ))}
+            <Link href={'/'}>
+              <button
+                className={style.more}
+                >Больше...
+              </button>
+            </Link>
           </div>
         </div>
       </div>

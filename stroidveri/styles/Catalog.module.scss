@@ -69,11 +69,20 @@
     flex-direction: column;
     background-color: #f2f2f2;
     flex: 0 1 250px;
-    min-height: 320px;
+    min-width: 150px;
+    min-height: 250px;
     max-height: 400px;
-    height: 20vmax;
+    height: 23vmax;
+    width: 60%;
     margin: 1rem;
     padding: 0 0.5rem;
+    @media (max-width: 604px) {
+        flex: 0 1 350px;
+        width: 60%;
+    }
+    @media (max-width: 370px) {
+        width: 80%;
+    }
     &_image{
         flex: 1 1 100%;
         border: none;

@@ -446,4 +446,33 @@ export const catalogList = [
               ],
     'image': '/vercel.svg',
   },
+  {
+    'id': '10',
+    'category': 'furnitures',
+    'name': 'Замок 62536',
+    'desc': 'Замок...',
+    'prices': [{
+                'size': '2200 x 900', 
+                'color1': '2900',
+                'color2': '2950',
+                'color3': '3100',
+                'color4': '3300',
+                },
+                {
+                'size': '2200 x 1000', 
+                'color1': '3000',
+                'color2': '3050',
+                'color3': '3200',
+                'color4': '3400',
+                },
+                {
+                'size': '2200 x 1100', 
+                'color1': '3100',
+                'color2': '3150',
+                'color3': '3300',
+                'color4': '3500',
+                },
+              ],
+    'image': '/vercel.svg',
+  },
 ];

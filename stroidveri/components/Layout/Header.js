@@ -66,6 +66,14 @@ export default function Header() {
 export const MenuLinks = ({mobileModalOpen}) => {
     return(
         <div className={style.navLinks}>
+            {mobileModalOpen != undefined ? 
+                <Link href={'/'}>
+                    <a className={style.pageLink} 
+                        onClick={mobileModalOpen != undefined ? (() => mobileModalOpen(false)) : null}
+                    >
+                    Главная</a>
+                </Link>
+            : null}
             {PAGES.map((page, i) => (
                 <Link key={i} href={page.href}>
                     <a className={style.pageLink} 
