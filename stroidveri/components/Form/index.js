@@ -118,7 +118,7 @@ export default function Form({ setOpenModal }) {
                         <label className={style.field_name}>{formData[data].name}:</label>
                         {data === 'user_message' ? (
                             <textarea
-                                className={formData[data].valid || formData[data].value === ''?
+                                className={formData[data].valid || !errorForm ?
                                     style.field_input :
                                     `${style.field_input} ${style.field_inval}`}
                                 type={formData[data].type}
@@ -132,7 +132,7 @@ export default function Form({ setOpenModal }) {
                             />
                         ) : (
                             <input 
-                                className={formData[data].valid || formData[data].value === '' ?
+                                className={formData[data].valid || !errorForm ?
                                     style.field_input :
                                     `${style.field_input} ${style.field_inval}`}
                                 type={formData[data].type}

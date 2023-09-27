@@ -53,6 +53,10 @@
             margin: 0 auto 0 21%;
             position: absolute;
             top: 50px;
+            @media (max-width: 450px) {
+                top: 13px;
+                margin: 0 auto 0 30%;
+            }
         }
         
     }

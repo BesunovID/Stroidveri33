@@ -49,6 +49,8 @@
         padding-left: 10%;
     }
     .backBut{
+        font-family: 'Rubik', sans-serif;
+        font-size: 15px;
         @include border(0);
         width: 8rem;
         height: 3rem;
@@ -61,6 +63,9 @@
 .products{
     @include flexible();
     flex-wrap: wrap;
+    @media (max-width: 604px) {
+        flex-direction: column;
+    }
 }
 
 .cart{
@@ -73,14 +78,15 @@
     min-height: 250px;
     max-height: 400px;
     height: 23vmax;
-    width: 60%;
     margin: 1rem;
     padding: 0 0.5rem;
     @media (max-width: 604px) {
-        flex: 0 1 350px;
-        width: 60%;
+        flex: 0 1 40vmax;
+        width: 35vmax;
+        max-width: 350px;
     }
-    @media (max-width: 370px) {
+    @media (max-width: 420px) {
+        flex: 0 1 350px;
         width: 80%;
     }
     &_image{
