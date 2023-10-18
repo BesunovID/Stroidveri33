@@ -68,7 +68,7 @@ const ColorsView = ({ windowWidth,
                             {activeColor.colorName}
                             <div className={style.selectImage}>
                                 <Image 
-                                    src={'/vercel.svg'} 
+                                    src={'/open-other.svg'} 
                                     layout='fill'
                                     alt={'select'}
                                 />

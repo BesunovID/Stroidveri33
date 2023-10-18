@@ -1,5 +1,6 @@
 import style from "../../../styles/Catalog.module.scss";
 import Link from "next/link";
+import Image from "next/image";
 import Head from "next/head";
 import CatalogCard from "../../../components/CatalogCard";
 
@@ -12,12 +13,18 @@ export default function Category( {products, header} ) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div className={style.upper}>
-                <div className={style.catNow}>
-                    <h2>{header}</h2>
-                </div>
                 <Link href={`/catalog`}>
-                    <button className={style.backBut}>Назад</button>
+                    <button className={style.backBut}>
+                        <Image 
+                            src="/left-arrow.svg" 
+                            alt="Назад" 
+                            layout="fill" 
+                        />
+                    </button>
                 </Link>
+                <div className={style.catNow}>
+                    <h2>{header.split(' ')[0]}</h2>
+                </div>
             </div>
             <div className={style.products}>
                     {products.lenght !== 0 ? (

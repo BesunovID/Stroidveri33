@@ -3,12 +3,12 @@ export const categories = [
   {
     'id': '1',
     'name': 'doors',
-    'namePage': 'Двери' 
+    'namePage': 'Двери для строительства' 
   },
   {
     'id': '2',
     'name': 'furnitures', 
-    'namePage': 'Фурнитура'
+    'namePage': 'Фурнитура для строительных дверей'
   },
 ];
  

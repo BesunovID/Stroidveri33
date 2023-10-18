@@ -85,7 +85,7 @@ const Content = ({ children, animation, setOpen}) => {
             <div className={style.content} ref={contentRef}>
                 <div className={style.modalClose}>
                     <Image 
-                        src={'/vercel.svg'}
+                        src={'/close.svg'}
                         alt='logo'
                         width={50}
                         height={50}

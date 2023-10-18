@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from 'react'
 import { useMountMenu } from './useMountMenu'
 import {CSSTransition} from 'react-transition-group'
 import { MenuLinks, ButtonFeedBack } from './Header'
+import Image from 'next/image'
 
 export default function HamburgerMenu() {
     const [isOpen, setOpen] = useState(false);
@@ -10,7 +11,13 @@ export default function HamburgerMenu() {
 
     return(
         <div className={style.hamburger}>
-            <button className={style.butOpen} onClick={() => setOpen(true)} />
+            <button className={style.butOpen} onClick={() => setOpen(true)}>
+                <Image 
+                    src={'/hamburger.svg'} 
+                    layout='fill'
+                    alt={'select'}
+                />
+            </button>
             {mounted && <Menu isOpen={isOpen} setOpen={setOpen}>
                 <MenuLinks mobileModalOpen={setOpen} />
                 <ButtonFeedBack />
@@ -44,7 +51,13 @@ const Menu = ({ children, isOpen, setOpen }) => {
             unmountOnExit
         > 
             <div className={style.menu} ref={menuRef}>
-                <button className={style.butClose} onClick={() => setOpen(false)} />
+                <button className={style.butClose} onClick={() => setOpen(false)}>
+                    <Image 
+                        src={'/close.svg'} 
+                        layout='fill'
+                        alt={'select'}
+                    />
+                </button>
                 {children}
             </div>
         </CSSTransition>

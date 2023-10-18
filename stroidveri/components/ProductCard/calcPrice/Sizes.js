@@ -65,7 +65,7 @@ const SizesView = ({ windowWidth,
                             {activeSize.sizeName}
                             <div className={style.selectImage}>
                                 <Image 
-                                    src={'/vercel.svg'} 
+                                    src={'/open-other.svg'} 
                                     layout='fill'
                                     alt={'select'}
                                 />
