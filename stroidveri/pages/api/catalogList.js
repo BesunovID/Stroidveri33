@@ -19,42 +19,6 @@ export const colors = [
   {'colorID': '4', 'color': 'Нитроэмаль'},
 ]
 
-export const subCategories = [
-  {
-    'name': 'outdoor'
-  },
-  {
-    'name': 'inner'
-  },
-  {
-    'name': 'reinforced'
-  },
-  {
-    'name': 'solid'
-  },
-  {
-    'name': 'shallow-void'
-  },
-  {
-    'name': 'thud'
-  },
-  {
-    'name': 'glazing'
-  },
-  {
-    'name': 'lining1'
-  },
-  {
-    'name': 'lining2'
-  },
-  {
-    'name': 'gateway'
-  },
-  {
-    'name': 'tambour'
-  },
-];
-
 export const catalogList = [
   {
     'id': '1',
@@ -212,7 +176,7 @@ export const catalogList = [
                 },
                   
               ],
-    'image': '/vercel.svg',
+    'image': '/doors/ido-21-10p.png',
   }, 
   {
     'id': '2',
@@ -241,7 +205,7 @@ export const catalogList = [
                 'color4': '3500',
                 },
               ],
-    'image': '/vercel.svg',
+    'image': '/doors/dy21-10p.png',
   },
   {
     'id': '3',
@@ -270,7 +234,7 @@ export const catalogList = [
                 'color4': '3500',
                 },
               ],
-    'image': '/vercel.svg',
+    'image': '/doors/dy-21-10p.png',
   },
   {
     'id': '4',
@@ -299,7 +263,7 @@ export const catalogList = [
                 'color4': '3500',
                 },
               ],
-    'image': '/vercel.svg',
+    'image': '/doors/dno21-10pshr.png',
   },
   {
     'id': '5',

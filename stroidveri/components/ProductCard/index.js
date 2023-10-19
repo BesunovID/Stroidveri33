@@ -14,6 +14,8 @@ export default function ProductCard({ product, colors }) {
                     src={product.image} 
                     alt={product.name} 
                     layout='fill'
+                    objectFit='contain'
+                    //style={{ width: '100%', height: 'auto' }}
                 />
             </div>
             <CalcPrice prices={product.prices} colors={colors} />

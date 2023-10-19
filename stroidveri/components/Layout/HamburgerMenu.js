@@ -11,6 +11,13 @@ export default function HamburgerMenu() {
 
     return(
         <div className={style.hamburger}>
+            <div className={style['logo-m']}>
+                <Image 
+                    src={'/vercel.svg'} 
+                    layout='fill'
+                    alt={'logo'}
+                />
+            </div>
             <button className={style.butOpen} onClick={() => setOpen(true)}>
                 <Image 
                     src={'/hamburger.svg'} 

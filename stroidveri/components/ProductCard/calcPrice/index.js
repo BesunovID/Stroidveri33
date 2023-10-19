@@ -74,7 +74,7 @@ const Price = ({ size, color, price }) => {
                     Цена от: {price}
                 </p>
                 <p className={style.text}>
-                    для уточнения цены 
+                    для оформления заказа или уточнения цены 
                 </p>
                 <ButtonFeedBack />
             </div>

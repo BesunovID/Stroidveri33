@@ -1,0 +1,26 @@
+.delivery{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    @media (max-width: 700px) {
+        flex-direction: column;
+    }
+    &-image{
+        position: relative;
+        margin: 20px 0;
+        flex: 0 1 47%;
+        @media (max-width: 700px) {
+            flex: auto;
+            width: 100%;
+        }
+    }
+    
+    &-descript{
+        flex: 0 1 50%;
+        @media (max-width: 700px) {
+            width: 100%;
+        }
+    }
+}

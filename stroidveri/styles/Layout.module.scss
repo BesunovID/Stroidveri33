@@ -124,6 +124,14 @@ $border-width: 0.1rem;
     }
 }
 .hamburger{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    .logo-m{
+        position: relative;
+        height: 55px;
+        width: 40%;
+    }
     .butOpen{
         position: relative;
         height: 35px;

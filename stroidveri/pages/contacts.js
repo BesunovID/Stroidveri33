@@ -26,8 +26,8 @@ export default function Contacts() {
                         height={50}
                     />
                     <h2> 
-                        <div>8-930-031-00-53</div> 
-                        <div>8-904-596-33-84</div>
+                        <a href="tel:89300310053">8-930-031-00-53</a> 
+                        <a href="tel:89045963384">8-904-596-33-84</a>
                     </h2> 
                 </div>
                 <div className={style.mail}>

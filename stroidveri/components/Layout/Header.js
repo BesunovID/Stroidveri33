@@ -91,7 +91,7 @@ export const ButtonFeedBack = () => {
     return(
         <>
             <button className={style.feedBack} onClick={() => setOpenModal(true)}>
-                <h2>Отправить заявку</h2>
+                <h2>Связаться с нами</h2>
             </button>
             <Modal isOpen={isOpenModal} setOpen={setOpenModal}>
                 <Form setOpenModal={setOpenModal}/>

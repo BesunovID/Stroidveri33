@@ -44,6 +44,8 @@ const Content = ({ product }) => {
                     src={product.image} 
                     alt={product.name} 
                     layout='fill'
+                    objectFit='contain'
+                    //style={{ width: '100%', height: 'auto' }}
                 />
             </div>
             <h3 className={styleProduct.cart_name}>
