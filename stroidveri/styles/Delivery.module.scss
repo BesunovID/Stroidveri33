@@ -19,6 +19,7 @@
     
     &-descript{
         flex: 0 1 50%;
+        line-height: 150%;
         @media (max-width: 700px) {
             width: 100%;
         }
