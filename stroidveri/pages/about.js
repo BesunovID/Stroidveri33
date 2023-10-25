@@ -20,6 +20,7 @@ export default function About({ posts }) {
 const PostsWrapper = ({ posts }) => {
     return(
         <div className={style.advantages}>
+            <h1>Почему стоит выбрать нашу компанию</h1>
             {posts.lenght !== 0 ? (
                 posts.map((post) => (
                     <LazyPost key={post.id}>
@@ -114,7 +115,7 @@ const Post = ({ data }) => {
                 </div>) : null}
                 <div className={style.data}>
                     <div className={style.name}>
-                        <p>{data.head}</p>
+                        <h2>{data.head}</h2>
                     </div>
                     <div className={style.description}>
                         <p>{data.desc}</p>
