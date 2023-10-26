@@ -6,6 +6,7 @@
 
 html,
 body {
+  height: 100%;
   padding: 0;
   margin: 0;
   /*font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -13,6 +14,12 @@ body {
   font-family: 'Rubik', sans-serif;
   font-weight: 400;
   color: #222222;
+}
+
+#__next{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {

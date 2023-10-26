@@ -23,8 +23,10 @@ $border-width: 0.1rem;
     border-radius: 0.7rem;
 }
 
+
 .contactsHead{
     @include flexible();
+    flex: 0 0 auto;
     position: relative;
     height: 22px;
     background-color: #434343;
@@ -52,6 +54,7 @@ $border-width: 0.1rem;
 
 .header {
     @include flexible();
+    flex: 0 0 auto;
     position: sticky;
     background-color: #ebebeb;
     color: #313131;
@@ -192,6 +195,8 @@ $border-width: 0.1rem;
 
 .content{
     @include flexible();
+    justify-content: flex-start;
+    flex-grow: 1;
     flex-direction: column;
     background-color: #ffffff;
     .container{
@@ -204,11 +209,8 @@ $border-width: 0.1rem;
     position: relative;
     background-color: rgba(white, 1);
     border-top: 1px solid grey;
-    bottom: 0; 
     font-size: 15px;
-
 }
-
 
 .menuEnter{
     transform: translateX(-100%);
