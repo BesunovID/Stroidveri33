@@ -35,7 +35,7 @@ const PostsWrapper = ({ posts }) => {
 }
 
 
-const LazyPost = ({ children }) => {
+export const LazyPost = ({ children }) => {
     const [isIntersecting, setIntersecting] = useState(false);
 
     const boxRef = useRef(null);

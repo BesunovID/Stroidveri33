@@ -28,8 +28,8 @@ export default function Home({ doors, furnitures }) {
       <div className={style.products}>
         <div className={style.category}>
           <div className={style.categoryName}>
-            <span>{doors.categoryHeader}</span>
-            <Link href={'/'}>
+            <h3>{doors.categoryHeader}</h3>
+            <Link href={'/catalog/doors'}>
               <button className={style.toCategory}>Показать все</button>
             </Link>
           </div>
@@ -37,18 +37,12 @@ export default function Home({ doors, furnitures }) {
             {doors.products.slice(0, 4).map((e) => (
               <CatalogCard product={e} />
             ))}
-            <Link href={'/'}>
-              <button
-                className={style.more}
-                >Больше...
-              </button>
-            </Link>
           </div>
         </div>
         <div className={style.category}>
           <div className={style.categoryName}>
-            <span>{furnitures.categoryHeader}</span>
-            <Link href={'/'}>
+            <h3>{furnitures.categoryHeader}</h3>
+            <Link href={'/catalog/furnitures'}>
               <button className={style.toCategory}>Показать все</button>
             </Link>
           </div>
@@ -56,12 +50,6 @@ export default function Home({ doors, furnitures }) {
             {furnitures.products.slice(0, 4).map((e) => (
               <CatalogCard product={e} />
             ))}
-            <Link href={'/'}>
-              <button
-                className={style.more}
-                >Больше...
-              </button>
-            </Link>
           </div>
         </div>
       </div>

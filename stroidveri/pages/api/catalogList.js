@@ -165,7 +165,7 @@ export const catalogList = [
     'image': '/doors/dg21-13lp.png',
   }, 
   {
-    'id': '2',
+    'id': '3',
     'category': 'doors',
     'name': 'ДУ',
     'desc': '"2. Дверные блоки усиленные, сплошного заполнения деревянным брусом\
@@ -209,7 +209,7 @@ export const catalogList = [
     'image': '/doors/dy21-10p.png',
   },
   {
-    'id': '3',
+    'id': '4',
     'category': 'doors',
     'name': 'ДНО 21-10пщр1',
     'desc': 'Дверные блоки внутренние ГОСТ 475-2016 под остекление штапик в комплекте',
@@ -308,7 +308,7 @@ export const catalogList = [
     'image': '/doors/ido-21-10p.png',
   },
   {
-    'id': '4',
+    'id': '5',
     'category': 'doors',
     'name': 'И632',
     'desc': 'Строительная дверь...',
@@ -337,7 +337,7 @@ export const catalogList = [
     'image': '/doors/dno21-10pshr.png',
   },
   {
-    'id': '5',
+    'id': '6',
     'category': 'doors',
     'name': 'ИДО253',
     'desc': 'Строительная дверь...',
@@ -366,7 +366,7 @@ export const catalogList = [
     'image': '/vercel.svg',
   },
   {
-    'id': '6',
+    'id': '7',
     'category': 'doors',
     'name': 'ИДО7544',
     'desc': 'Строительная дверь...',
@@ -395,7 +395,7 @@ export const catalogList = [
     'image': '/vercel.svg',
   },
   {
-    'id': '7',
+    'id': '8',
     'category': 'furnitures',
     'name': 'Петля 2353',
     'desc': 'Петли...',
@@ -424,7 +424,7 @@ export const catalogList = [
     'image': '/vercel.svg',
   },
   {
-    'id': '8',
+    'id': '9',
     'category': 'furnitures',
     'name': 'Петля 5274',
     'desc': 'Петли...',
@@ -453,7 +453,7 @@ export const catalogList = [
     'image': '/vercel.svg',
   },
   {
-    'id': '9',
+    'id': '10',
     'category': 'furnitures',
     'name': 'Замок 353 2353',
     'desc': 'Замок...',
@@ -482,7 +482,7 @@ export const catalogList = [
     'image': '/vercel.svg',
   },
   {
-    'id': '10',
+    'id': '11',
     'category': 'furnitures',
     'name': 'Замок 62536',
     'desc': 'Замок...',
