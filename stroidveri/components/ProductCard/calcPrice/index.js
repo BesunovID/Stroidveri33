@@ -60,31 +60,22 @@ export default function CalcPrice({ prices, colors }) {
         <>
             <Sizes sizes={prices} activeSize={activeSize} setSize={setSize} windowWidth={windowWidth}/>
             <Colors colors={colors} activeColor={activeColor} setColor={setColor} windowWidth={windowWidth}/>
-            <Price size={activeSize.sizeName} color={activeColor.colorName} price={price} />
+            <Price price={price} />
         </>
     )
 }
 
 
-const Price = ({ size, color, price }) => {
-   // if (size === '' || color === '') {
-        return(
-            <div className={style.price_wrap}>
-                <p className={style.price}>
-                    Цена от: {price}
-                </p>
-                <p className={style.text}>
-                    для оформления заказа или уточнения цены 
-                </p>
-                <ButtonFeedBack />
-            </div>
-        )
-  /*  } else {
-        return(
+const Price = ({ price }) => {
+    return(
+        <div className={style.price_wrap}>
             <p className={style.price}>
-                Цена: {price}
+                Цена от: {price}
             </p>
-        )
-    } */
-    
+            <p className={style.text}>
+                для оформления заказа или уточнения цены 
+            </p>
+            <ButtonFeedBack />
+        </div>
+    )
 }
