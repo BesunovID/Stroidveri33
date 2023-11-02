@@ -363,7 +363,7 @@ export const catalogList = [
                 'color4': '3500',
                 },
               ],
-    'image': '/vercel.svg',
+    'image': '/image-not-found.png',
   },
   {
     'id': '7',
@@ -392,7 +392,7 @@ export const catalogList = [
                 'color4': '3500',
                 },
               ],
-    'image': '/vercel.svg',
+    'image': '/image-not-found.png',
   },
   {
     'id': '8',
@@ -421,7 +421,7 @@ export const catalogList = [
                 'color4': '3500',
                 },
               ],
-    'image': '/vercel.svg',
+    'image': '/image-not-found.png',
   },
   {
     'id': '9',
@@ -450,7 +450,7 @@ export const catalogList = [
                 'color4': '3500',
                 },
               ],
-    'image': '/vercel.svg',
+    'image': '/image-not-found.png',
   },
   {
     'id': '10',
@@ -479,7 +479,7 @@ export const catalogList = [
                 'color4': '3500',
                 },
               ],
-    'image': '/vercel.svg',
+    'image': '/image-not-found.png',
   },
   {
     'id': '11',
@@ -508,6 +508,6 @@ export const catalogList = [
                 'color4': '3500',
                 },
               ],
-    'image': '/vercel.svg',
+    'image': '/image-not-found.png',
   },
 ];

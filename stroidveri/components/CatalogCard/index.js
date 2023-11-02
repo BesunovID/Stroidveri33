@@ -20,12 +20,12 @@ const Cart = ({ children, product }) => {
 
     return(
         <>
-            <div
+            <button
                 className={styleProduct.cart}
                 onClick={() => {setOpen(true)}}
             >
                 {children}
-            </div>
+            </button>
             <Modal isOpen={isOpen} setOpen={setOpen}>
                 <ProductCard product={product} colors={colors} />
                 <Link href={`/catalog/${product.category}/${product.id}`}>
