@@ -1,5 +1,5 @@
 import style from '../../styles/Layout.module.scss'
-import logo from '../../public/vercel.svg'
+import logo from '../../public/logo.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import HamburgerMenu from './HamburgerMenu'
@@ -46,7 +46,14 @@ export default function Header() {
                         (<>
                             <div className={style.logo}>
                                 <Link href='/'>
-                                    <a><Image src={logo} alt='Стройдвери 33' /></a>
+                                    <a>
+                                        <Image 
+                                        src={logo} 
+                                        layout='fill'
+                                        objectFit='contain'
+                                        alt='Стройдвери 33' 
+                                        />
+                                    </a>
                                 </Link>
                             </div>
                             <MenuLinks />

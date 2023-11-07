@@ -71,9 +71,11 @@ $border-width: 0.1rem;
             justify-content: end;
         }
         .logo {
+            position: relative;
             display: flex;
             align-items: center;
-            margin: 0.5rem 3rem 0.5rem 0;
+            width: 90px;
+            margin: 0 3rem 0 0;
             @media (max-width: 800px) {
                 margin: 0 1rem 0 0;
             }
