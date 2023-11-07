@@ -20,9 +20,10 @@ export default function Catalog( {catalog} ) {
                         <a className={style.catLink}>
                             <div className={style['image-wrapper']}>
                                 <Image 
-                                    src="/vercel.svg" 
-                                    alt="Vercel Logo" 
-                                    layout="fill"    
+                                    src="/cat-doors.png" 
+                                    alt="Строительные двери" 
+                                    layout='fill'
+                                    objectFit='contain'  
                                 />
                             </div>
                             <h2>Двери</h2> 
@@ -32,9 +33,10 @@ export default function Catalog( {catalog} ) {
                         <a className={style.catLink}>
                             <div className={style['image-wrapper']}>
                                 <Image 
-                                    src="/vercel.svg" 
-                                    alt="Vercel Logo" 
-                                    layout="fill" 
+                                    src="/cat-furnitura.png" 
+                                    alt="Фурнитура для дверей" 
+                                    layout='fill'
+                                    objectFit='contain' 
                                 />
                             </div>
                             <h2>Фурнитура</h2> 

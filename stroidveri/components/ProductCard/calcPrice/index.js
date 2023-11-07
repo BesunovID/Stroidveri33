@@ -27,26 +27,29 @@ export default function CalcPrice({ prices, colors }) {
     const [price, setPrice] = useState('');
 
     useEffect(() => {
-        if (activeSize.sizeName != ''){
-            if (activeColor.colorName != ''){
-                setPrice(prices.filter((e) => (
-                    e.size === activeSize.sizeName
-                ))[0][`color${activeColor.colorID}`]);
-            }
-            else {
-                setPrice(prices.filter((e) => (
-                    e.size === activeSize.sizeName
-                ))[0]['color1']);
-            }
-        }
-        else if (activeColor.colorName != ''){
-            const arr = prices.map((e) => (
-                e[`color${activeColor.colorID}`]
-            ));
-            setPrice(Math.min(...arr));
-        }
+        if (colors === 'null') setPrice(prices);
         else{
-            setPrice(prices[0]['color1']);
+            if (activeSize.sizeName != ''){
+                if (activeColor.colorName != ''){
+                    setPrice(prices.filter((e) => (
+                        e.size === activeSize.sizeName
+                    ))[0][`color${activeColor.colorID}`]);
+                }
+                else {
+                    setPrice(prices.filter((e) => (
+                        e.size === activeSize.sizeName
+                    ))[0]['color1']);
+                }
+            }
+            else if (activeColor.colorName != ''){
+                const arr = prices.map((e) => (
+                    e[`color${activeColor.colorID}`]
+                ));
+                setPrice(Math.min(...arr));
+            }
+            else{
+                setPrice(prices[0]['color1']);
+            }
         }
 
         window.addEventListener('resize', resizeHandler);
@@ -55,14 +58,22 @@ export default function CalcPrice({ prices, colors }) {
             window.removeEventListener('resize', resizeHandler);
         }
     }, [activeSize.sizeName, activeColor.colorName, activeColor.colorID, resizeHandler, prices]);
-    
-    return(
-        <>
-            <Sizes sizes={prices} activeSize={activeSize} setSize={setSize} windowWidth={windowWidth}/>
-            <Colors colors={colors} activeColor={activeColor} setColor={setColor} windowWidth={windowWidth}/>
+
+
+    if (colors === 'null') {
+        return(
             <Price price={price} />
-        </>
-    )
+        )
+    } 
+    else{
+        return(
+            <>
+                <Sizes sizes={prices} activeSize={activeSize} setSize={setSize} windowWidth={windowWidth}/>
+                <Colors colors={colors} activeColor={activeColor} setColor={setColor} windowWidth={windowWidth}/>
+                <Price price={price} />
+            </>
+        )
+    }
 }
 
 

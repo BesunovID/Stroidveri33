@@ -139,6 +139,16 @@
             grid-row: 2/ auto;
         }
     }
+    .image-full{
+        position: relative;
+        @include flexible();
+        margin: 0 20px;
+        grid-column: 1/ span 2;
+        grid-row: 2/ span 2;
+        @media (max-width: 700px) {
+            grid-row: 2/ auto;
+        }
+    }
     .sizes{
         @include flexible();
         .props{

@@ -9,7 +9,7 @@ export default function ProductCard({ product, colors }) {
             <h1 className={style.name}>
                 {product.name}
             </h1>
-            <div className={style.image}>
+            <div className={product.category === 'doors' ? style.image : style['image-full']}>
                 <Image 
                     src={product.image} 
                     alt={product.name} 
@@ -18,7 +18,10 @@ export default function ProductCard({ product, colors }) {
                     //style={{ width: '100%', height: 'auto' }}
                 />
             </div>
+            {product.category === 'doors' ? 
             <CalcPrice prices={product.prices} colors={colors} />
+            : <CalcPrice prices={product.prices} colors='null' />
+            }
             <span className={style.desc}>
                 Описание: <br />{product.desc}
             </span>
