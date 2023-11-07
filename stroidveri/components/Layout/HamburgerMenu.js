@@ -18,11 +18,15 @@ export default function HamburgerMenu() {
                     alt={'logo'}
                 />
             </div>
+            <div className={style['numbers-mobile']}>
+                <a href="tel:89300310053">8-930-031-00-53</a> 
+                <a href="tel:89045963384">8-904-596-33-84</a>
+            </div>
             <button className={style.butOpen} onClick={() => setOpen(true)}>
                 <Image 
                     src={'/hamburger.svg'} 
                     layout='fill'
-                    alt={'select'}
+                    alt={'Открыть меню'}
                 />
             </button>
             {mounted && <Menu isOpen={isOpen} setOpen={setOpen}>

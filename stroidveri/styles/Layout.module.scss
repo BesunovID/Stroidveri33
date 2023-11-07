@@ -108,6 +108,21 @@ $border-width: 0.1rem;
             }
 
         }
+        .numbers{
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            a{
+                display: flex;
+                align-items: center;
+                height: 35%;
+                white-space: nowrap;
+                margin: 3px 0;
+            }
+        }
         .feedBack {
             font-family: 'Rubik', sans-serif;
             font-size: 11px;
@@ -143,6 +158,20 @@ $border-width: 0.1rem;
         position: relative;
         height: 55px;
         width: 40%;
+    }
+    .numbers-mobile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
+        a{
+            display: flex;
+            align-items: center;
+            height: 35%;
+            white-space: nowrap;
+            margin: 3px 0;
+        }
     }
     .butOpen{
         position: relative;

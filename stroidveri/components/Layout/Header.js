@@ -11,10 +11,10 @@ export default function Header() {
     const [windowWidth, setWindowWidth] = useState('portable');
 
     const resizeHandler = () => {
-        if ((windowWidth === 'portable') && (window.innerWidth <= 700)){
+        if ((windowWidth === 'portable') && (window.innerWidth <= 900)){
             setWindowWidth('modile');
         } 
-        else if ((windowWidth === 'modile') && (window.innerWidth > 700)){
+        else if ((windowWidth === 'modile') && (window.innerWidth > 900)){
             setWindowWidth('portable');
         }
     }
@@ -50,6 +50,10 @@ export default function Header() {
                                 </Link>
                             </div>
                             <MenuLinks />
+                            <div className={style.numbers}>
+                                <a href="tel:89300310053">8-930-031-00-53</a> 
+                                <a href="tel:89045963384">8-904-596-33-84</a>
+                            </div>
                             <ButtonFeedBack />
                         </>) :
                         (<HamburgerMenu>
