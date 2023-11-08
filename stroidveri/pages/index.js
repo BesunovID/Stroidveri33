@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { posts } from './api/aboutPosts'
 import CatalogCard from '../components/CatalogCard'
+import { LazyElement } from '../components/LazyElement'
 
 export default function Home({ doors, furnitures }) {
   return (
@@ -13,19 +14,29 @@ export default function Home({ doors, furnitures }) {
         <meta name="description" content="Купить деревянные дверные блоки и двери в сборе оптом для строительных объектов с доставкой по России. Выгодные цены и отличное качество для вашего бизнеса!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <div className={style.promo}>
         <Image
-          src='/vercel.svg'
+          src='/main-doors.webp'
           alt='Акция'
-          layout='fill'
+          width={1290}
+          height={604}
+          style={{
+              'width': '100%',
+              'height': 'auto',
+              'border-radius': '15px'
+          }}
         />
       </div>
+
       <div className={style.aboutUs}>
         <p>
           {posts.find((post) => post.id === '1').desc}
         </p>
       </div>
+
       <div className={style.products}>
+
         <div className={style.category}>
           <div className={style.categoryName}>
             <h3>{doors.categoryHeader}</h3>
@@ -39,6 +50,7 @@ export default function Home({ doors, furnitures }) {
             ))}
           </div>
         </div>
+
         <div className={style.category}>
           <div className={style.categoryName}>
             <h3>{furnitures.categoryHeader}</h3>

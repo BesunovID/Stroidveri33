@@ -48,10 +48,10 @@ export default function Header() {
                                 <Link href='/'>
                                     <a>
                                         <Image 
-                                        src={logo} 
-                                        layout='fill'
-                                        objectFit='contain'
-                                        alt='Стройдвери 33' 
+                                            src={logo} 
+                                            layout='fill'
+                                            objectFit='contain'
+                                            alt='Стройдвери 33' 
                                         />
                                     </a>
                                 </Link>

@@ -5,7 +5,7 @@ export default function Footer() {
     return(
       <footer className={style.footer}>
         <a href="/">
-          <Image src="/logo.png" alt="ООО Стройдвери" width={72} height={46} />
+          <Image src="/logo.png" alt="ООО Стройдвери" width={90} height={90} />
           <span>ООО Стройдвери</span>
         </a>
       </footer>

@@ -59,6 +59,7 @@ $border-width: 0.1rem;
     background-color: #ebebeb;
     color: #313131;
     font-weight: 600;
+    min-height: 90px;
     top: 0;
     border-bottom: 1px solid grey;
     z-index: 10;
@@ -74,15 +75,16 @@ $border-width: 0.1rem;
             position: relative;
             display: flex;
             align-items: center;
-            width: 90px;
-            margin: 0 3rem 0 0;
+            width: 100px;
+            height: 90px;
+            margin: 0 30px 0 0;
             @media (max-width: 800px) {
                 margin: 0 1rem 0 0;
             }
             img{
                 transition: all 0.3s ease-in-out;   
                 &:hover{
-                    transform: scale(1.1);
+                    transform: scale(1.15);
                 }
             }
         }
@@ -90,12 +92,13 @@ $border-width: 0.1rem;
             display: flex;
             flex-grow: 1;
             align-items: center;
+            justify-content: center;
             margin: 5px 0;
             .pageLink{
                 position: relative;
                 display: flex;
                 align-items: center;
-                height: 70%;
+                height: 80%;
                 border: 0.1rem solid rgba(grey, 0);
                 border-radius: 0.4rem;
                 margin: 0 5px;
@@ -158,15 +161,19 @@ $border-width: 0.1rem;
     justify-content: space-between;
     .logo-m{
         position: relative;
-        height: 55px;
-        width: 40%;
+        height: 80px;
+        width: 80px;
+        margin-left: 30px;
+        @media (max-width: 400px) {
+            margin-left: 0;
+        }
     }
     .numbers-mobile{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin: 0 10px;
+        margin: 0 20px;
         a{
             display: flex;
             align-items: center;
@@ -179,7 +186,7 @@ $border-width: 0.1rem;
         position: relative;
         height: 35px;
         width: 35px;
-        margin: 10px;
+        margin: auto 0;
         background-color: #ebebeb;
         border: none;
     }

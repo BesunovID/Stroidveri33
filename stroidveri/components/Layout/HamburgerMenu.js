@@ -4,6 +4,7 @@ import { useMountMenu } from './useMountMenu'
 import {CSSTransition} from 'react-transition-group'
 import { MenuLinks, ButtonFeedBack } from './Header'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function HamburgerMenu() {
     const [isOpen, setOpen] = useState(false);
@@ -12,11 +13,16 @@ export default function HamburgerMenu() {
     return(
         <div className={style.hamburger}>
             <div className={style['logo-m']}>
-                <Image 
-                    src={'/vercel.svg'} 
-                    layout='fill'
-                    alt={'logo'}
-                />
+                <Link href='/'>
+                    <a>
+                        <Image 
+                            src='/logo.png'
+                            layout='fill'
+                            objectFit='contain'
+                            alt='Стройдвери 33' 
+                        />
+                    </a>
+                </Link>
             </div>
             <div className={style['numbers-mobile']}>
                 <a href="tel:89300310053">8-930-031-00-53</a> 
