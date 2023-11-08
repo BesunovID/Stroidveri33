@@ -135,7 +135,7 @@ const Placeholder = ({}) => {
 
 
 export async function getStaticProps() {
-    const res = await fetch('http://localhost:3000//api/aboutPosts');
+    const res = await fetch('https://timely-druid-15b9e8.netlify.app/api/aboutPosts');
     const posts = await res.json();
 
     if(!posts) {

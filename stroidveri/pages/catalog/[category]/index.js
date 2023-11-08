@@ -42,7 +42,7 @@ export default function Category( {products, header} ) {
 }
 
 export async function getStaticProps(context) {
-    const content = await fetch(`http://localhost:3000/api/categories/${context.params.category}`)
+    const content = await fetch(`/api/categories/${context.params.category}`)
         .then((res) => res.json());
 
     const products = content.products;
@@ -57,7 +57,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-    const res = await fetch('http://localhost:3000/api/categories');
+    const res = await fetch('/api/categories');
     const cats = await res.json();
 
     const paths = cats.map((cat) => ({

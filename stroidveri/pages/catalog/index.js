@@ -59,7 +59,7 @@ export default function Catalog( {catalog} ) {
 
 
 export async function getStaticProps() {
-    const res = await fetch('http://localhost:3000/api/products');
+    const res = await fetch('https://timely-druid-15b9e8.netlify.app/api/products');
     const catalog = await res.json();
 
     if(!catalog) {

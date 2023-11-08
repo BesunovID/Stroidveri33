@@ -32,7 +32,7 @@ export default function Product( {content} ) {
 }
 
 export async function getStaticProps(context) {
-    const content = await fetch(`http://localhost:3000/api/products/${context.params.id}`)
+    const content = await fetch(`https://timely-druid-15b9e8.netlify.app/api/products/${context.params.id}`)
         .then((res) => res.json());
 
 
@@ -49,7 +49,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-    const products = await fetch('http://localhost:3000/api/products')
+    const products = await fetch('https://timely-druid-15b9e8.netlify.app/api/products')
         .then((res) => res.json());
 
     const paths = products.map((product) => ({

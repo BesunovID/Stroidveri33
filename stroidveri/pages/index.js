@@ -45,8 +45,8 @@ export default function Home({ doors, furnitures }) {
             </Link>
           </div>
           <div className={style.categoryList}>
-            {doors.products.slice(0, 4).map((e) => (
-              <CatalogCard product={e} />
+            {doors.products.slice(0, 4).map((e, index) => (
+              <CatalogCard product={e} key={index} />
             ))}
           </div>
         </div>
@@ -59,8 +59,8 @@ export default function Home({ doors, furnitures }) {
             </Link>
           </div>
           <div className={style.categoryList}>
-            {furnitures.products.slice(0, 4).map((e) => (
-              <CatalogCard product={e} />
+            {furnitures.products.slice(0, 4).map((e, index) => (
+              <CatalogCard product={e} key={index}/>
             ))}
           </div>
         </div>
@@ -70,10 +70,10 @@ export default function Home({ doors, furnitures }) {
 }
 
 export async function getStaticProps() {
-  const doors = await fetch(`http://localhost:3000/api/categories/doors`)
+  const doors = await fetch(`https://timely-druid-15b9e8.netlify.app/api/categories/doors`)
     .then((res) => res.json());
 
-  const furnitures = await fetch(`http://localhost:3000/api/categories/furnitures`)
+  const furnitures = await fetch(`https://timely-druid-15b9e8.netlify.app/api/categories/furnitures`)
     .then((res) => res.json());
 
   return{

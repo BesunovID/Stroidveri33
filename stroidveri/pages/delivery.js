@@ -29,7 +29,7 @@ export default function Delivery() {
                 </LazyElement>
                 <div className={style['delivery-descript']}>
                     {text.map((el, index) => (
-                        <LazyElement>
+                        <LazyElement key={index}>
                             {el.header != '' ? <h3>{el.header}</h3> : null}
                             <p>{el.text}</p> 
                             {index === 2 ? 
