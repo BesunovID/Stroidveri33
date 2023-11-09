@@ -3,7 +3,7 @@ import logo from '../../public/logo.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import HamburgerMenu from './HamburgerMenu'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, forwardRef } from 'react';
 import Form from '../Form'
 import Modal from '../Modal'
 
@@ -32,13 +32,13 @@ export default function Header() {
         <>
             {windowWidth === 'portable' ?
             (<div className={style.contactsHead}>
-                <p>
+                <div className={style.contactsHeadWrap}>
                     <div className={style.tel}>
                         <span>8-930-031-00-53</span> 
                         <span>8-904-596-33-84</span> 
                     </div>
                     <span className={style.mail}>stroidveri33@mail.ru</span>
-                </p>
+                </div>
             </div>) : null}
             <header className={style.header}>
                 <nav className={style.nav}>
@@ -46,14 +46,12 @@ export default function Header() {
                         (<>
                             <div className={style.logo}>
                                 <Link href='/'>
-                                    <a>
-                                        <Image 
-                                            src={logo} 
-                                            layout='fill'
-                                            objectFit='contain'
-                                            alt='Стройдвери 33' 
-                                        />
-                                    </a>
+                                    <Image 
+                                        src={logo} 
+                                        layout='fill'
+                                        objectFit='contain'
+                                        alt='Стройдвери 33' 
+                                    />
                                 </Link>
                             </div>
                             <MenuLinks />
@@ -78,24 +76,35 @@ export const MenuLinks = ({mobileModalOpen}) => {
     return(
         <div className={style.navLinks}>
             {mobileModalOpen != undefined ? 
-                <Link href={'/'}>
-                    <a className={style.pageLink} 
-                        onClick={mobileModalOpen != undefined ? (() => mobileModalOpen(false)) : null}
-                    >
-                    Главная</a>
+                <Link href={'/'} passHref>
+                    <PageLink mobileModalOpen={mobileModalOpen}>
+                        Главная
+                    </PageLink>
                 </Link>
             : null}
             {PAGES.map((page, i) => (
-                <Link key={i} href={page.href}>
-                    <a className={style.pageLink} 
-                        onClick={mobileModalOpen != undefined ? (() => mobileModalOpen(false)) : null}
-                    >
-                    {page.name}</a>
+                <Link key={i} href={page.href} passHref>
+                    <PageLink mobileModalOpen={mobileModalOpen}>
+                        {page.name}
+                    </PageLink>
                 </Link>
             ))}
         </div>
     )
 }
+
+const PageLink = forwardRef(function page({ children, mobileModalOpen, href }, ref) {
+    return(
+        <a 
+            href={href}
+            className={style.pageLink} 
+            onClick={mobileModalOpen != undefined ? (() => mobileModalOpen(false)) : null}
+            ref={ref}
+        >
+            {children}
+        </a>
+    )
+})
 
 export const ButtonFeedBack = () => {
     const [isOpenModal, setOpenModal] = useState(false);

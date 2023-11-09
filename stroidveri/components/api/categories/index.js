@@ -1,4 +1,4 @@
-import {categories} from '../catalogList'
+import {categories} from '../../consts/catalogList'
 
 export default function handler(req, res) {
     if (!categories) {

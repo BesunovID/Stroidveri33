@@ -4,10 +4,11 @@ import Head from "next/head";
 import style from '../../../styles/Product.module.scss'
 import ProductCard from "../../../components/ProductCard";
 import Info from "../../../components/info";
+import { catalogList, colors } from "../../../components/consts/catalogList";
 
 export default function Product( {content} ) {
-    const product = content.product[0];
-    const colors = content.colors;
+    const product = content[0];
+    console.log(product)
     const titleCat = (product.category === 'doors') ? 'Строительные двери ' : 'Фурнитура для строительных дверей';
     return(
         <>
@@ -32,15 +33,10 @@ export default function Product( {content} ) {
 }
 
 export async function getStaticProps(context) {
-    const content = await fetch(`https://timely-druid-15b9e8.netlify.app/api/products/${context.params.id}`)
-        .then((res) => res.json());
+    const content = catalogList.filter((product) => (
+        product.id === context.params.id
+    ));
 
-
-    if (!content) {
-        return {
-            notFound: true,
-        }
-    }
     return{
         props: {
             content
@@ -49,10 +45,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-    const products = await fetch('https://timely-druid-15b9e8.netlify.app/api/products')
-        .then((res) => res.json());
-
-    const paths = products.map((product) => ({
+    const paths = catalogList.map((product) => ({
         params:
             {
                 category: product.category,
@@ -61,7 +54,7 @@ export async function getStaticPaths() {
     }));
 
     return{ 
-        paths, 
+        paths,
         fallback: false,
     }
 }

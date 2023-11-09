@@ -4,6 +4,7 @@ import Image from "next/image";
 import Head from "next/head";
 import CatalogCard from "../../../components/CatalogCard";
 import Info from "../../../components/info";
+import {categories, catalogList } from "../../../components/consts/catalogList";
 
 export default function Category( {products, header} ) {
     return(
@@ -42,11 +43,15 @@ export default function Category( {products, header} ) {
 }
 
 export async function getStaticProps(context) {
-    const content = await fetch(`https://timely-druid-15b9e8.netlify.app/api/categories/${context.params.category}`)
-        .then((res) => res.json());
+    const products = catalogList.filter((product) => (
+        product.category === context.params.category
+    ));
 
-    const products = content.products;
-    const header = content.categoryHeader;
+    const categoryHeader = categories.filter((e) => (
+        e.name === context.params.category
+    ))[0].namePage;
+
+    const header = categoryHeader;
 
     return{
         props: {
@@ -57,10 +62,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-    const res = await fetch('https://timely-druid-15b9e8.netlify.app/api/categories');
-    const cats = await res.json();
-
-    const paths = cats.map((cat) => ({
+    const paths = categories.map((cat) => ({
         params: 
             {
                 category: cat.name,
@@ -68,7 +70,7 @@ export async function getStaticPaths() {
     }));
 
     return{ 
-        paths, 
+        paths,
         fallback: false,
     }
 }

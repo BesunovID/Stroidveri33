@@ -22,9 +22,12 @@ export default function ProductCard({ product, colors }) {
             <CalcPrice prices={product.prices} colors={colors} />
             : <CalcPrice prices={product.prices} colors='null' />
             }
-            <span className={style.desc}>
-                Описание: <br />{product.desc}
-            </span>
+            <p className={style.desc}>
+                <span className={style.descName}>Описание</span>
+                {product.desc.split('&').map((el, key) => (
+                    <span key={key}>{el}<br/></span>
+                ))}
+            </p>
         </div>
     )
 }

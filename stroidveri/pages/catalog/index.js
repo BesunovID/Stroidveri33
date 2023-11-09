@@ -4,6 +4,7 @@ import Head from "next/head"
 import style from "../../styles/Catalog.module.scss"
 import CatalogCard from "../../components/CatalogCard"
 import Info from "../../components/info"
+import { catalogList } from "../../components/consts/catalogList";
 
 export default function Catalog( {catalog} ) { 
     return(
@@ -59,14 +60,7 @@ export default function Catalog( {catalog} ) {
 
 
 export async function getStaticProps() {
-    const res = await fetch('https://timely-druid-15b9e8.netlify.app/api/products');
-    const catalog = await res.json();
-
-    if(!catalog) {
-        return{
-            notFound: true,
-        };
-    }
+    const catalog = catalogList;
 
     return{
         props: {

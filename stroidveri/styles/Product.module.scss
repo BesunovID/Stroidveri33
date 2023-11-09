@@ -251,11 +251,22 @@
     .desc{
         grid-column: 1/ span 2;
         grid-row: 5/ auto;
-        margin-bottom: 20px;
+        margin: 0 0 20px 50px;
+        line-height: 200%;
+        @media (max-width: 700px) {
+            margin: 0 0 20px 0;
+        }
         @media (max-width: 420px) {
             grid-column: 1/ auto;
             grid-row: 6/ auto;
             justify-content: space-between;
+        }
+        &Name{
+            display: block;
+            margin-bottom: 10px;
+            @media (max-width: 420px) {
+                text-align: center;
+            }
         }
     }
 }

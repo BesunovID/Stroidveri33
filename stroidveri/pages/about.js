@@ -3,8 +3,9 @@ import Image from "next/image"
 import { useEffect, useState, useRef } from "react"
 import style from "../styles/About.module.scss"
 import {CSSTransition} from 'react-transition-group'
+import { posts } from "../components/consts/aboutPosts"
 
-export default function About({ posts }) {
+export default function About({ }) {
     return(
         <>
             <Head>
@@ -12,12 +13,12 @@ export default function About({ posts }) {
                 <meta name="description" content="Купить качественные, надежные, изготовленные строго по ГОСТу строительные двери для вашего объекта стоит именно у нас!" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <PostsWrapper posts={posts} />
+            <PostsWrapper />
         </>
     )
 }
 
-const PostsWrapper = ({ posts }) => {
+const PostsWrapper = ({ }) => {
     return(
         <div className={style.advantages}>
             <h1>Почему стоит выбрать нашу компанию</h1>
@@ -132,21 +133,3 @@ const Placeholder = ({}) => {
         </div>
     )
 };
-
-
-export async function getStaticProps() {
-    const res = await fetch('https://timely-druid-15b9e8.netlify.app/api/aboutPosts');
-    const posts = await res.json();
-
-    if(!posts) {
-        return{
-            notFound: true,
-        };
-    }
-
-    return{
-        props: {
-            posts,
-        },
-    };
-}

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useState } from "react"
 import Modal from '../Modal';
 import ProductCard from '../ProductCard';
-import { colors } from '../../pages/api/catalogList'
+import { colors } from '../consts/catalogList'
 
 export default function CatalogCard({ product }) {
     return(

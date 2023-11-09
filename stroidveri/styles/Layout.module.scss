@@ -33,7 +33,7 @@ $border-width: 0.1rem;
     @media (max-width: 700px) {
         display: none;
     }
-    p{
+    &Wrap{
         @include conteiner();
         display: flex;
         justify-content: space-around;

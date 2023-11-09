@@ -1,4 +1,4 @@
-import {colors, catalogList} from '../catalogList'
+import {colors, catalogList} from '../../consts/catalogList'
 
 
 export default function handler(req, res) {

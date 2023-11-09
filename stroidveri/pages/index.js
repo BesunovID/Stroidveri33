@@ -2,9 +2,9 @@ import Head from 'next/head'
 import style from '../styles/Home.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
-import { posts } from './api/aboutPosts'
+import { posts } from '../components/consts/aboutPosts'
 import CatalogCard from '../components/CatalogCard'
-import { LazyElement } from '../components/LazyElement'
+import { catalogList } from '../components/consts/catalogList'
 
 export default function Home({ doors, furnitures }) {
   return (
@@ -39,13 +39,13 @@ export default function Home({ doors, furnitures }) {
 
         <div className={style.category}>
           <div className={style.categoryName}>
-            <h3>{doors.categoryHeader}</h3>
+            <h3>Двери для строительства</h3>
             <Link href={'/catalog/doors'}>
               <button className={style.toCategory}>Показать все</button>
             </Link>
           </div>
           <div className={style.categoryList}>
-            {doors.products.slice(0, 4).map((e, index) => (
+            {doors.slice(0, 4).map((e, index) => (
               <CatalogCard product={e} key={index} />
             ))}
           </div>
@@ -53,13 +53,13 @@ export default function Home({ doors, furnitures }) {
 
         <div className={style.category}>
           <div className={style.categoryName}>
-            <h3>{furnitures.categoryHeader}</h3>
+            <h3>Фурнитура для строительных дверей</h3>
             <Link href={'/catalog/furnitures'}>
               <button className={style.toCategory}>Показать все</button>
             </Link>
           </div>
           <div className={style.categoryList}>
-            {furnitures.products.slice(0, 4).map((e, index) => (
+            {furnitures.slice(0, 4).map((e, index) => (
               <CatalogCard product={e} key={index}/>
             ))}
           </div>
@@ -70,11 +70,13 @@ export default function Home({ doors, furnitures }) {
 }
 
 export async function getStaticProps() {
-  const doors = await fetch(`https://timely-druid-15b9e8.netlify.app/api/categories/doors`)
-    .then((res) => res.json());
+  const doors = catalogList.filter((product) => (
+    product.category === 'doors'
+  ));
 
-  const furnitures = await fetch(`https://timely-druid-15b9e8.netlify.app/api/categories/furnitures`)
-    .then((res) => res.json());
+  const furnitures = catalogList.filter((product) => (
+    product.category === 'furnitures'
+  ));
 
   return{
       props: {
