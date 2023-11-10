@@ -19,15 +19,21 @@
 
 .aboutUs{
     width: 100%;
+    font-size: 17px;
     display: flex;
     justify-content: center;
     p{
+        font-weight: 400;
         width: 80%;
         text-align: center;
         display: block;
         margin: 0;
         @media (max-width: 900px) {
             width: 100%;
+        }
+        h1{
+            font-size: 17px;
+            font-weight: 400;
         }
     }
 }

@@ -33,6 +33,7 @@
         }
         &_input{
             font-family: 'Rubik', sans-serif;
+            background-color: #ffffff;
             font-size: 15px;
             flex: 0 1 80%;
             margin: 10px 0;
@@ -89,6 +90,9 @@
         height: 45px;
         &:hover{
             @include border(1);
+            background-color: #ffffff;
+            color: #222222;
+            transition: all 0.3s ease-in-out;
         }
     }
 }

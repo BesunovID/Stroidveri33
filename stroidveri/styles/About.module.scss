@@ -7,13 +7,14 @@ $border: 1px solid black;
     align-items: center;
     .postBox{
         position: relative;
+        overflow: hidden;
         width: 100%;
         min-height: 35vh;
         margin-bottom: 20px;
         @media (max-width: 450px) {
             min-height: 200px;
             margin: 10px;
-        }
+        } 
         .post{
             position: absolute;
             display: flex;
@@ -25,18 +26,16 @@ $border: 1px solid black;
                 position: relative;
                 height: auto;
             }
-           /* background: linear-gradient(170deg,
-            rgba(255,255,255,1) 40%,
-            rgba(231,231,231,1) 100%); */
             .image{
                 position: relative;
                 flex: 0 1 30%;
+                min-height: 35vh;
                 height: 80%;
                 margin: 0 2rem;
                 @media (max-width: 450px) {
                     display: none;
                 }
-            }
+            } 
             .data{
                 display: flex;
                 flex-direction: column;
@@ -56,15 +55,12 @@ $border: 1px solid black;
                     
             &.left{
                 flex-direction: row-reverse;
-               /* background: linear-gradient(190deg,
-                        rgba(255,255,255,1) 40%,
-                        rgba(231,231,231,0.4) 100%); */
                 &::after{
                     left: -2px;
                     border-right: none;
                     border-left: $border;
                 }
-            }
+            } 
 
             &::after{
                 content: '';
@@ -79,13 +75,13 @@ $border: 1px solid black;
                     width: 97%;
                     height: 80%;
                 }
-            }
+            } 
         }
         .placeHolder{
             position: relative;
             width: 100%;
             height: 100%;
-        }  
+        }   
         
     }     
 }
