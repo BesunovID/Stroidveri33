@@ -12,8 +12,8 @@ export default function Home({ doors, furnitures }) {
       <Head>
         <title>Строительные двери оптом от производителя</title>
         <meta name="description" content="Купить деревянные дверные блоки и двери в сборе оптом для строительных объектов с доставкой по России. Выгодные цены и отличное качество для вашего бизнеса!" />
-        <link rel="icon" href="/favicon.svg" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </Head>
 
       <div className={style.promo}>

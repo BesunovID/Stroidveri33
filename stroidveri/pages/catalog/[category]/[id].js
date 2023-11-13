@@ -16,8 +16,8 @@ export default function Product( {content} ) {
             <Head>
                 <title>{titleCat} {product.name}</title>
                 <meta name="description" content={description} />
-                <link rel="icon" href="/favicon.svg" />
                 <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
             </Head>
             <Info />
             <Link href={`/catalog/${product.category}`}>
