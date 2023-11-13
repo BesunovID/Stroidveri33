@@ -10,11 +10,13 @@ export default function Product( {content} ) {
     const product = content[0];
     console.log(product)
     const titleCat = (product.category === 'doors') ? 'Строительные двери ' : 'Фурнитура для строительных дверей';
+    const description = `${product.name}. Купить дверные блоки, двери в сборе и фурнитуру с доставкой по РФ у нас на сайте. Обращайтесь по указанным контактам или свяжитесь онлайн через сайт.`;
     return(
         <>
             <Head>
                 <title>{titleCat} {product.name}</title>
-                <meta name="description" content="Купить дверные блоки, двери в сборе и фурнитуру с доставкой по РФ у нас на сайте. Обращайтесь по указанным контактам или свяжитесь онлайн через сайт." />
+                <meta name="description" content={description} />
+                <link rel="icon" href="/favicon.svg" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Info />

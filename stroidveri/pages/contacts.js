@@ -15,6 +15,7 @@ export default function Contacts() {
             <Head>
                 <title>Стройдвери | Контакты</title>
                 <meta name="description" content="Чтобы выбрать и купить двери для строй объектов, обращайтесь по указанным на нашем сайте контактам или заполните онлайн форму и мы свяжемся с вами." />
+                <link rel="icon" href="/favicon.svg" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div className={style.grid}>
