@@ -2,7 +2,6 @@ import Head from 'next/head'
 import style from '../styles/Home.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
-import { posts } from '../components/consts/aboutPosts'
 import CatalogCard from '../components/CatalogCard'
 import { catalogList } from '../components/consts/catalogList'
 
@@ -20,6 +19,7 @@ export default function Home({ doors, furnitures }) {
         <Image
           src='/main-doors.webp'
           alt='Акция'
+          priority={true}
           width={1290}
           height={604}
           style={{
