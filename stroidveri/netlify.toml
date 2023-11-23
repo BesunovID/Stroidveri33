@@ -30,3 +30,4 @@
 
 [[plugins]]
   package = "netlify-plugin-hashfiles"
+

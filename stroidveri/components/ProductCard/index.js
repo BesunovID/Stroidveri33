@@ -15,7 +15,6 @@ export default function ProductCard({ product, colors }) {
                     alt={product.name} 
                     layout='fill'
                     objectFit='contain'
-                    //style={{ width: '100%', height: 'auto' }}
                 />
             </div>
             {product.category === 'doors' ? 

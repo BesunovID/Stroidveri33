@@ -12,6 +12,7 @@
     "@netlify/plugin-nextjs": "^4.41.1",
     "@netlify/plugin-sitemap": "^0.8.1",
     "@pbe/react-yandex-maps": "^1.2.4",
+    "netlify-plugin-cloudinary": "^1.15.0",
     "netlify-plugin-hashfiles": "^4.0.2",
     "netlify-plugin-submit-sitemap": "^0.4.0",
     "next": "^12.3.4",

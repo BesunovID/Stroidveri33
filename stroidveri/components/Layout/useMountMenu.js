@@ -11,7 +11,7 @@ export const useMountMenu = ({ isOpen }) => {
                 setMounted(false);
             }, 800)
         }
-    }, [isOpen]);
+    }, [isOpen, mounted]);
 
     return {
         mounted,

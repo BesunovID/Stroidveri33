@@ -2,9 +2,11 @@ import styleProduct from '../../styles/Catalog.module.scss'
 import Image from 'next/image'
 import Link from 'next/link';
 import { useState } from "react"
-import Modal from '../Modal';
+import dynamic from 'next/dynamic'
 import ProductCard from '../ProductCard';
 import { colors } from '../consts/catalogList'
+
+const DynamicModal = dynamic(() => import('../Modal'));
 
 export default function CatalogCard({ product }) {
     return(
@@ -26,12 +28,13 @@ const Cart = ({ children, product }) => {
             >
                 {children}
             </button>
-            <Modal isOpen={isOpen} setOpen={setOpen}>
+            
+            <DynamicModal isOpen={isOpen} setOpen={setOpen}>
                 <ProductCard product={product} colors={colors} />
                 <Link href={`/catalog/${product.category}/${product.id}`}>
                     <button className={styleProduct.onPage} onClick={() => setOpen(false)}>Перейти на страницу товара</button>
                 </Link>
-            </Modal>
+            </DynamicModal>
         </>
     )
 }
@@ -45,7 +48,6 @@ const Content = ({ product }) => {
                     alt={product.name} 
                     layout='fill'
                     objectFit='contain'
-                    //style={{ width: '100%', height: 'auto' }}
                 />
             </div>
             <h3 className={styleProduct.cart_name}>

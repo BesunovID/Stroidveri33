@@ -105,14 +105,12 @@ const Post = ({ data }) => {
                     <Image
                         src={data.image}
                         alt={data.head}
-                        layout='fill'
-                        objectFit='contain'
-                        //width={512}
-                        //height={512}
-                        //style={{
-                        //    'width': 'auto',
-                        //    'height': '100%',
-                        //}}
+                        width={512}
+                        height={512}
+                        style={{
+                            'width': 'auto',
+                            'height': '100%',
+                        }}
                     />
                 </div>) : null}
                 <div className={style.data}>

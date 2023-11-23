@@ -11,7 +11,7 @@ export default function Category( {products, header} ) {
         <>
             <Head>
                 <title>{header}</title>
-                <meta name="description" content="Деревянные двери оптом для строительных объктов. Индивидуальное изготовление на заказ с доставкой по РФ." />
+                <meta name="description" content="Деревянные оргалитовые двери оптом для строительных объктов. Индивидуальное изготовление на заказ с доставкой по РФ." />
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
             </Head>

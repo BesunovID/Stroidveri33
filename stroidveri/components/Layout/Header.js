@@ -2,24 +2,26 @@ import style from '../../styles/Layout.module.scss'
 import logo from '../../public/logo.png'
 import Image from 'next/image'
 import Link from 'next/link'
-import HamburgerMenu from './HamburgerMenu'
 import { useState, useEffect, forwardRef } from 'react';
 import Form from '../Form'
-import Modal from '../Modal'
+import dynamic from 'next/dynamic'
+
+const DynamicModal = dynamic(() => import('../Modal'));
+const DynamicMenu = dynamic(() => import('./HamburgerMenu'));
 
 export default function Header() {
     const [windowWidth, setWindowWidth] = useState('portable');
 
-    const resizeHandler = () => {
-        if ((windowWidth === 'portable') && (window.innerWidth <= 900)){
-            setWindowWidth('modile');
-        } 
-        else if ((windowWidth === 'modile') && (window.innerWidth > 900)){
-            setWindowWidth('portable');
-        }
-    }
-
     useEffect(() => {
+        const resizeHandler = () => {
+            if ((windowWidth === 'portable') && (window.innerWidth <= 900)){
+                setWindowWidth('modile');
+            } 
+            else if ((windowWidth === 'modile') && (window.innerWidth > 900)){
+                setWindowWidth('portable');
+            }
+        }
+        
         window.addEventListener('resize', resizeHandler);
         resizeHandler();
         return () => {
@@ -46,12 +48,14 @@ export default function Header() {
                         (<>
                             <div className={style.logo}>
                                 <Link href='/'>
-                                    <Image 
-                                        src={logo} 
-                                        layout='fill'
-                                        objectFit='contain'
-                                        alt='Стройдвери 33' 
-                                    />
+                                    <a>
+                                        <Image 
+                                            src={logo} 
+                                            layout='fill'
+                                            objectFit='contain'
+                                            alt='Стройдвери 33' 
+                                        />
+                                    </a>
                                 </Link>
                             </div>
                             <MenuLinks />
@@ -61,10 +65,10 @@ export default function Header() {
                             </div>
                             <ButtonFeedBack />
                         </>) :
-                        (<HamburgerMenu>
+                        (<DynamicMenu>
                             <MenuLinks />
                             <ButtonFeedBack />
-                        </HamburgerMenu>)
+                        </DynamicMenu>)
                     }
                 </nav>
             </header>
@@ -113,9 +117,9 @@ export const ButtonFeedBack = () => {
             <button className={style.feedBack} onClick={() => setOpenModal(true)}>
                 <h2>Связаться с нами</h2>
             </button>
-            <Modal isOpen={isOpenModal} setOpen={setOpenModal}>
+            <DynamicModal isOpen={isOpenModal} setOpen={setOpenModal}>
                 <Form setOpenModal={setOpenModal}/>
-            </Modal>
+            </DynamicModal>
         </>
     )
 }

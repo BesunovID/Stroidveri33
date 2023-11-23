@@ -13,6 +13,7 @@ export default function Delivery() {
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
             </Head>
             <div className={style.delivery}>
+                <h1>Доставка продукции по России</h1>
                 <LazyElement>
                     <div className={style['delivery-image1']}>
                         <Image 
@@ -20,10 +21,11 @@ export default function Delivery() {
                             alt={'Доставка в пути'}
                             width={768}
                             height={432}
+                            priority={true}
                             style={{
                                 'width': '100%',
                                 'height': 'auto',
-                                'border-radius': '15px'
+                                'borderRadius': '15px'
                             }}
                         />
                     </div>
@@ -31,7 +33,7 @@ export default function Delivery() {
                 <div className={style['delivery-descript']}>
                     {text.map((el, index) => (
                         <LazyElement key={index}>
-                            {el.header != '' ? <h3>{el.header}</h3> : null}
+                            {el.header != '' ? <h2>{el.header}</h2> : null}
                             <p>{el.text}</p> 
                             {index === 2 ? 
                             <LazyElement>
@@ -41,10 +43,11 @@ export default function Delivery() {
                                         alt={'Разгрузка доставки'}
                                         width={768}
                                         height={432}
+                                        priority={true}
                                         style={{
                                             'width': '100%',
                                             'height': 'auto',
-                                            'border-radius': '15px'
+                                            'borderRadius': '15px'
                                         }}
                                     />
                                 </div>

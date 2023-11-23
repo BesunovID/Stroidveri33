@@ -6,15 +6,6 @@ import { ButtonFeedBack } from "../../Layout/Header";
 
 export default function CalcPrice({ prices, colors }) {
     const [windowWidth, setWindowWidth] = useState('portable');
-    
-    const resizeHandler = () => {
-        if ((windowWidth === 'portable') && (window.innerWidth <= 700)){
-            setWindowWidth('mobile');
-        } 
-        else if ((windowWidth === 'mobile') && (window.innerWidth > 700)){
-            setWindowWidth('portable');
-        }
-    }
 
     const [activeSize, setSize] = useState({
         'sizeName': '',
@@ -27,6 +18,15 @@ export default function CalcPrice({ prices, colors }) {
     const [price, setPrice] = useState('');
 
     useEffect(() => {
+        const resizeHandler = () => {
+            if ((windowWidth === 'portable') && (window.innerWidth <= 700)){
+                setWindowWidth('mobile');
+            } 
+            else if ((windowWidth === 'mobile') && (window.innerWidth > 700)){
+                setWindowWidth('portable');
+            }
+        }
+        
         if (colors === 'null') setPrice(prices);
         else{
             if (activeSize.sizeName != ''){
@@ -57,7 +57,7 @@ export default function CalcPrice({ prices, colors }) {
         return () => {
             window.removeEventListener('resize', resizeHandler);
         }
-    }, [activeSize.sizeName, activeColor.colorName, activeColor.colorID, resizeHandler, prices]);
+    }, [activeSize.sizeName, activeColor.colorName, activeColor.colorID, prices, colors, windowWidth]);
 
 
     if (colors === 'null') {
