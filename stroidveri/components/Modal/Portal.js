@@ -10,7 +10,7 @@ const Portal = ({ children }) => {
         return () => {
             document.body.removeChild(container);
         };
-    }, []);
+    }, [container]);
 
     return ReactDOM.createPortal(children, container);
 };

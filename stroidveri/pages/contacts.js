@@ -17,24 +17,26 @@ export default function Contacts() {
             </Head>
             <div className={style.grid}>
                 <div className={style.numbers}>
-                    <Image
-                        src={'/contacts-phone.svg'}
-                        alt={'Телефон'}
-                        width={50}
-                        height={50}
-                    />
+                    <div className={style['numbers-image']}>
+                        <Image
+                            src={"/contacts-phone.svg"}
+                            alt={'Телефон'}
+                            layout="fill"
+                        />
+                    </div>
                     <h2> 
                         <a href="tel:89300310053">8-930-031-00-53</a> 
                         <a href="tel:89045963384">8-904-596-33-84</a>
                     </h2> 
                 </div>
                 <div className={style.mail}>
-                    <Image
-                        src={'/contacts-mail.svg'}
-                        alt={'Почта'}
-                        width={50}
-                        height={50}
-                    />
+                    <div className={style['mail-image']}>
+                        <Image
+                            src={'/contacts-mail.svg'}
+                            alt={'Почта'}
+                            layout="fill"
+                        />
+                    </div>
                     <h2>stroidveri33@mail.ru</h2>
                 </div>
                 <div className={style.requisites}>

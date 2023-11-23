@@ -26,7 +26,7 @@ export const useMount = ({ isOpen }) => {
                 };
             }, ANIMATION_TIME)
         }
-    }, [isOpen]);
+    }, [inModal, isOpen, mounted]);
 
     return {
         mounted,

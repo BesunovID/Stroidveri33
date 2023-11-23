@@ -22,7 +22,7 @@ export default function LayoutModal({ children, isOpen, setOpen }) {
         return () => {
             document.removeEventListener('keydown', handleEscapeKey);
         }
-    }, [isOpen]);
+    }, [isOpen, setOpen]);
 
     return(
         <div className={style.container}>
