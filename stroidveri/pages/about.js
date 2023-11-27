@@ -10,6 +10,8 @@ export default function About({ }) {
         <>
             <Head>
                 <title>Стройдвери | О компании - почему нам доверяют</title>
+                <meta charSet="utf-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
                 <meta name="description" content="Купить качественные, надежные, изготовленные строго по ГОСТу строительные двери для вашего объекта стоит именно у нас!" />
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />

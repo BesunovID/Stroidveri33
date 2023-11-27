@@ -8,6 +8,8 @@ export default function Delivery() {
         <>
             <Head>
                 <title>Стройдвери | Доставка</title>
+                <meta charSet="utf-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
                 <meta name="description" content="Доставка строительных дверей по всей России. Купить и оформить доставку дверных блоков можно у нас на сайте и по указанным контактам." />
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />

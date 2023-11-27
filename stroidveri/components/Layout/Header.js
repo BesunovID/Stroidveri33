@@ -51,8 +51,8 @@ export default function Header() {
                                     <a>
                                         <Image 
                                             src={logo} 
-                                            layout='fill'
-                                            objectFit='contain'
+                                            width={90}
+                                            height={90}
                                             alt='Стройдвери 33' 
                                         />
                                     </a>
@@ -87,7 +87,7 @@ export const MenuLinks = ({mobileModalOpen}) => {
                 </Link>
             : null}
             {PAGES.map((page, i) => (
-                <Link key={i} href={page.href} passHref>
+                <Link key={i} href={page.href} passHref prefetch={false}>
                     <PageLink mobileModalOpen={mobileModalOpen}>
                         {page.name}
                     </PageLink>

@@ -11,6 +11,8 @@ export default function Contacts() {
         <>
             <Head>
                 <title>Стройдвери | Контакты</title>
+                <meta charSet="utf-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
                 <meta name="description" content="Чтобы выбрать и купить временные деревянные двери для строй объектов, обращайтесь по указанным на нашем сайте контактам или заполните онлайн форму и мы свяжемся с вами." />
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -22,6 +24,7 @@ export default function Contacts() {
                             src={"/contacts-phone.svg"}
                             alt={'Телефон'}
                             layout="fill"
+                            unoptimized = {false}
                         />
                     </div>
                     <h2> 
@@ -35,6 +38,7 @@ export default function Contacts() {
                             src={'/contacts-mail.svg'}
                             alt={'Почта'}
                             layout="fill"
+                            unoptimized = {false}
                         />
                     </div>
                     <h2>stroidveri33@mail.ru</h2>

@@ -967,6 +967,29 @@ export const catalogList = [
     'image': '/doors/dg21-13lp.png',
   },
   {
+    'id': '24',
+    'category': 'doors',
+    'name': 'ДНО 21-13п',
+    'desc': 'Дверь тамбурная, остекленная армированным стеклом на герметик.',
+    'prices': [
+                {
+                'size': '2100 x 1300', 
+                'color1': '5900',
+                'color2': '5950',
+                'color3': '6100',
+                'color4': '6300',
+                },
+                {
+                'size': '2100 x 1500', 
+                'color1': '6000',
+                'color2': '6050',
+                'color3': '6200',
+                'color4': '6400',
+                }
+              ],
+    'image': '/doors/dno21-13p.webp',
+  }, 
+  {
     'id': '16',
     'category': 'furnitures',
     'name': 'Замок сувальдный',

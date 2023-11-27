@@ -10,6 +10,8 @@ export default function Home({ doors, furnitures }) {
     <>
       <Head>
         <title>Строительные двери оптом от производителя</title>
+        <meta charSet="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         <meta name="description" content="Купить деревянные дверные блоки, оргалитовые двери оптом для строительных и временных объектов с доставкой по России. Выгодные цены и отличное качество для вашего бизнеса!" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />

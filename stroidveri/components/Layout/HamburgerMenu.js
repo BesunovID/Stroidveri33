@@ -17,8 +17,8 @@ export default function HamburgerMenu() {
                     <a>
                         <Image 
                             src='/logo.png'
-                            layout='fill'
-                            objectFit='contain'
+                            width={90}
+                            height={90}
                             alt='Стройдвери 33' 
                         />
                     </a>
@@ -31,6 +31,8 @@ export default function HamburgerMenu() {
             <button className={style.butOpen} onClick={() => setOpen(true)}>
                 <Image 
                     src={'/hamburger.svg'} 
+                    width={35}
+                    height={35}
                     layout='fill'
                     alt={'Открыть меню'}
                 />

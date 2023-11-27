@@ -11,6 +11,8 @@ export default function Category( {products, header} ) {
         <>
             <Head>
                 <title>{header}</title>
+                <meta charSet="utf-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
                 <meta name="description" content="Деревянные оргалитовые двери оптом для строительных объктов. Индивидуальное изготовление на заказ с доставкой по РФ." />
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -23,6 +25,7 @@ export default function Category( {products, header} ) {
                             src="/left-arrow.svg" 
                             alt="Назад" 
                             layout="fill" 
+                            unoptimized = {false}
                         />
                     </button>
                 </Link>
@@ -33,7 +36,7 @@ export default function Category( {products, header} ) {
             <div className={style.products}>
                     {products.lenght !== 0 ? (
                         products.map((product) => (
-                            <CatalogCard  product={product} key={product.id}/>
+                            <CatalogCard product={product} key={product.id}/>
                         ))
                     ) : (
                         <div>Товары не найдены ...</div>
