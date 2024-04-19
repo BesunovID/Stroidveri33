@@ -13,6 +13,11 @@ export default function Home({ doors, furnitures }) {
         <meta charSet="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         <meta name="description" content="Купить деревянные дверные блоки, оргалитовые двери оптом для строительных и временных объектов с доставкой по России. Выгодные цены и отличное качество для вашего бизнеса!" />
+        <meta property="og:title" content="Строительные двери оптом от производителя"/>
+        <meta property="og:description" content="Купить деревянные двери с доставкой по России. Выгодные цены и отличное качество для вашего бизнеса!"/>
+        <meta property="og:image" content="https://stroidveri33.ru/_next/image?url=%2Fmain-doors.webp&w=1920&q=75"/>
+        <meta property="og:type" content="profile"/>
+        <meta property="og:url" content= "https://stroidveri33.ru/" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </Head>
@@ -20,7 +25,7 @@ export default function Home({ doors, furnitures }) {
       <div className={style.promo}>
         <Image
           src='/main-doors.webp'
-          alt='Акция'
+          alt='Строительные деревянные двери оптом от производителя'
           priority={true}
           width={1290}
           height={604}
@@ -35,16 +40,16 @@ export default function Home({ doors, furnitures }) {
       <div className={style.aboutUs}>
         <h1>Стройдвери33 - ведущая компания, специализирующаяся на изготовлении и продаже
           деревянных строительных оргалитовых дверей для различных типов помещений.</h1>
-        <h2>
+        <p>
           {mainText}
-        </h2>
+        </p>
       </div>
 
       <div className={style.products}>
 
         <div className={style.category}>
           <div className={style.categoryName}>
-            <h3>Двери для строительства</h3>
+            <h2>Двери для строительства</h2>
             <Link href={'/catalog/doors'}>
               <button className={style.toCategory}>Показать все</button>
             </Link>
@@ -58,7 +63,7 @@ export default function Home({ doors, furnitures }) {
 
         <div className={style.category}>
           <div className={style.categoryName}>
-            <h3>Фурнитура для строительных дверей</h3>
+            <h2>Фурнитура для строительных дверей</h2>
             <Link href={'/catalog/furnitures'}>
               <button className={style.toCategory}>Показать все</button>
             </Link>

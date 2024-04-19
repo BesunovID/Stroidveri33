@@ -21,21 +21,21 @@ export default function Contacts() {
                 <div className={style.numbers}>
                     <div className={style['numbers-image']}>
                         <Image
-                            src={"/contacts-phone.svg"}
+                            src={"/contactPhone.svg"}
                             alt={'Телефон'}
                             layout="fill"
                             unoptimized = {false}
                         />
                     </div>
                     <h2> 
-                        <a href="tel:89300310053">8-930-031-00-53</a> 
-                        <a href="tel:89045963384">8-904-596-33-84</a>
+                        <a href="tel:89300310053">8-930-031-00-53 </a> 
+                        <a href="tel:89045963384">8-904-596-33-84 </a>
                     </h2> 
                 </div>
                 <div className={style.mail}>
                     <div className={style['mail-image']}>
                         <Image
-                            src={'/contacts-mail.svg'}
+                            src={'/contactMail.svg'}
                             alt={'Почта'}
                             layout="fill"
                             unoptimized = {false}
