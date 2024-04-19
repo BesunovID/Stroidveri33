@@ -23,6 +23,7 @@ Allow: /catalog/doors/12
 Allow: /catalog/doors/13
 Allow: /catalog/doors/14
 Allow: /catalog/doors/15
+Allow: /catalog/doors/24
 Allow: /catalog/furnitures
 Allow: /catalog/furnitures/16
 Allow: /catalog/furnitures/17
