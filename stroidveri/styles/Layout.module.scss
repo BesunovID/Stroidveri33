@@ -28,7 +28,7 @@ $border-width: 0.1rem;
     @include flexible();
     flex: 0 0 auto;
     position: relative;
-    height: 22px;
+    height: 30px;
     background-color: #434343;
     @media (max-width: 700px) {
         display: none;
@@ -38,7 +38,7 @@ $border-width: 0.1rem;
         display: flex;
         justify-content: space-around;
         margin: 0;
-        font-size: 16px;
+        font-size: 18px;
         color: #e1e1e1;
         .tel{
             margin: 0 20px;
@@ -59,11 +59,17 @@ $border-width: 0.1rem;
     background-color: #ebebeb;
     color: #313131;
     font-weight: 600;
-    font-size: 17px;
+    font-size: 20px;
     min-height: 90px;
     top: 0;
     border-bottom: 1px solid grey;
     z-index: 10;
+    @media (max-width: 1440px) {
+        font-size: 18px;
+    }
+    @media (max-width: 1260px) {
+        font-size: 17px;
+    }
     .nav{
         display: flex;
         align-items: stretch;
@@ -154,6 +160,11 @@ $border-width: 0.1rem;
                 padding: 20px 15px;
             }
         }
+        .raiting{
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+        }
     }
 }
 .hamburger{
@@ -229,6 +240,9 @@ $border-width: 0.1rem;
                 padding: 15px 10px;
             }
         }
+        .raiting{
+            margin: 25px 0;
+        }
     }
 }
 
@@ -245,12 +259,19 @@ $border-width: 0.1rem;
 
 .footer{
     @include flexible();
+    justify-content: space-around;
     position: relative;
     background-color: rgba(white, 1);
     border-top: 1px solid grey;
     font-size: 15px;
+    .links{
+        margin: 0 10px;
+    }
+    .logoFooter{
+        @include flexible();
+    }
     a{
-        margin: 0 5px;
+        margin: 0 10px;
         vertical-align: middle;
     }
 }

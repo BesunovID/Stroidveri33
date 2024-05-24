@@ -64,6 +64,7 @@ export default function Header() {
                                 <a href="tel:89045963384">8-904-596-33-84</a>
                             </div>
                             <ButtonFeedBack />
+                            <Raiting />
                         </>) :
                         (<DynamicMenu>
                             <MenuLinks />
@@ -124,22 +125,36 @@ export const ButtonFeedBack = () => {
     )
 }
 
+export const Raiting = () => {
+    return(
+        <div className={style.raiting}>
+            <iframe 
+                src="https://yandex.ru/sprav/widget/rating-badge/236394758693?type=rating&theme=dark" 
+                width="150" 
+                height="50" 
+                frameborder="0"
+            >
+            </iframe>
+        </div>
+    )
+}
 
 const PAGES = [
     {
         'href': '/catalog',
         'name': 'Каталог'
-    },
+    },    
     {
-        'href': '/contacts',
-        'name': 'Контакты'
+        'href': '/about',
+        'name': 'О компании'
     },
     {
         'href': '/delivery',
         'name': 'Доставка'
     },
     {
-        'href': '/about',
-        'name': 'О компании'
-    }
+        'href': '/contacts',
+        'name': 'Контакты'
+    },
+
 ]
