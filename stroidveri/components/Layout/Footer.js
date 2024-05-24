@@ -35,7 +35,7 @@ export default function Footer() {
         <div className={style.logoFooter}>
           <Image src="/logo.png" alt="ООО Стройдвери" width={90} height={90} />
           <Link href="/">
-            ООО "СтройДвери33"
+            ООО СтройДвери33
           </Link>
         </div>
         <div className={style.copypaste}>
