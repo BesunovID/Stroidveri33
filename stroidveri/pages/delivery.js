@@ -23,7 +23,7 @@ export default function Delivery() {
                             alt={'Доставка в пути'}
                             width={768}
                             height={432}
-                            priority={true}
+                            priority
                             style={{
                                 'width': '100%',
                                 'height': 'auto',
@@ -45,7 +45,7 @@ export default function Delivery() {
                                         alt={'Разгрузка доставки'}
                                         width={768}
                                         height={432}
-                                        priority={true}
+                                        priority
                                         style={{
                                             'width': '100%',
                                             'height': 'auto',

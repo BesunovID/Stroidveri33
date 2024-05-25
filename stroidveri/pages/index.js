@@ -26,7 +26,7 @@ export default function Home({ doors, furnitures }) {
         <Image
           src='/main-doors.webp'
           alt='Строительные деревянные двери оптом от производителя'
-          priority={true}
+          priority
           width={1290}
           height={604}
           style={{
