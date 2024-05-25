@@ -46,8 +46,11 @@ const Content = ({ product }) => {
                 <Image 
                     src={product.image} 
                     alt={product.name} 
-                    layout='fill'
-                    objectFit='contain'
+                    fill
+                    sizes="(max-width: 600px) 90vw, (max-width: 900px) 40vw, (max-width: 1150px) 30vw, 20vw"
+                    style={{objectFit:"contain"}}
+                    // layout='fill'
+                   // objectFit='contain'
                 />
             </div>
             <h3 className={styleProduct.cart_name}>

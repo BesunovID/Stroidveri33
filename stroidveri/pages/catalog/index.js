@@ -20,31 +20,33 @@ export default function Catalog( {catalog} ) {
             <Info />
             <div className={style.upper}>
                 <div className={style.category}>
-                    <Link href={`/catalog/doors`}>
-                        <a className={style.catLink}>
-                            <div className={style['image-wrapper']}>
-                                <Image 
-                                    src="/cat-doors.png" 
-                                    alt="Строительные двери" 
-                                    layout='fill'
-                                    objectFit='contain'  
-                                />
-                            </div>
-                            <h2>Двери</h2> 
-                        </a>
+                    <Link className={style.catLink} href={`/catalog/doors`}>
+                        <div className={style['image-wrapper']}>
+                            <Image 
+                                src="/cat-doors.png" 
+                                alt="Строительные двери" 
+                                fill
+                                sizes="30vw"
+                                style={{objectFit:"contain"}}
+                                //layout='fill'
+                                //objectFit='contain'  
+                            />
+                        </div>
+                        <h2>Двери</h2> 
                     </Link>
-                    <Link href={`/catalog/furnitures`}>
-                        <a className={style.catLink}>
-                            <div className={style['image-wrapper']}>
-                                <Image 
-                                    src="/cat-furnitura.png" 
-                                    alt="Фурнитура для дверей" 
-                                    layout='fill'
-                                    objectFit='contain' 
-                                />
-                            </div>
-                            <h2>Фурнитура</h2> 
-                        </a>
+                    <Link className={style.catLink} href={`/catalog/furnitures`}>
+                        <div className={style['image-wrapper']}>
+                            <Image 
+                                src="/cat-furnitura.png" 
+                                alt="Фурнитура для дверей" 
+                                fill
+                                sizes="30vw"
+                                style={{objectFit:"contain"}}
+                                //layout='fill'
+                               // objectFit='contain' 
+                            />
+                        </div>
+                        <h2>Фурнитура</h2> 
                     </Link>
                 </div>
             </div>

@@ -8,10 +8,12 @@ export default function YMap() {
     };
 
    return(
-        <YMaps>
+        <iframe className={style.map} src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=236394758693" style={{border: '0'}}></iframe>
+        
+            /*<YMaps>
             <Map defaultState={defaultState} className={style.map}>
                 <Placemark geometry={defaultState.center} />
             </Map>
-        </YMaps>
+            </YMaps>*/
    )
 }

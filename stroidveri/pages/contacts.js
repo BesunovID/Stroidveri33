@@ -23,7 +23,9 @@ export default function Contacts() {
                         <Image
                             src={"/contactPhone.svg"}
                             alt={'Телефон'}
-                            layout="fill"
+                            fill
+                            sizes="10vw"
+                           // layout="fill"
                             unoptimized = {false}
                         />
                     </div>
@@ -37,7 +39,9 @@ export default function Contacts() {
                         <Image
                             src={'/contactMail.svg'}
                             alt={'Почта'}
-                            layout="fill"
+                            fill
+                            sizes="10vw"
+                          //  layout="fill"
                             unoptimized = {false}
                         />
                     </div>
@@ -54,10 +58,7 @@ export default function Contacts() {
                     <h3>Наш адрес: <br />
                     г. Ковров ул. Набережная, д. 23А, стр. 8</h3>
                     <div className={style.yaMap}>
-                       {
-                       // <DynamicMap /> 
-                       }
-                       <iframe className={style.map} src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=236394758693" frameborder="0"></iframe>
+                       <DynamicMap /> 
                     </div>
                 </div>
             </div>

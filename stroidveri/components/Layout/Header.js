@@ -48,14 +48,12 @@ export default function Header() {
                         (<>
                             <div className={style.logo}>
                                 <Link href='/'>
-                                    <a>
-                                        <Image 
-                                            src={logo} 
-                                            width={90}
-                                            height={90}
-                                            alt='Стройдвери 33' 
-                                        />
-                                    </a>
+                                    <Image 
+                                        src={logo} 
+                                        width={90}
+                                        height={90}
+                                        alt='Стройдвери 33' 
+                                    />
                                 </Link>
                             </div>
                             <MenuLinks />
@@ -88,7 +86,7 @@ export const MenuLinks = ({mobileModalOpen}) => {
                 </Link>
             : null}
             {PAGES.map((page, i) => (
-                <Link key={i} href={page.href} passHref prefetch={false}>
+                <Link className={style.pageLink} key={i} href={page.href} passHref prefetch={false}>
                     <PageLink mobileModalOpen={mobileModalOpen}>
                         {page.name}
                     </PageLink>
@@ -98,16 +96,15 @@ export const MenuLinks = ({mobileModalOpen}) => {
     )
 }
 
-const PageLink = forwardRef(function page({ children, mobileModalOpen, href }, ref) {
+const PageLink = forwardRef(function page({ children, mobileModalOpen }, ref) {
     return(
-        <a 
-            href={href}
-            className={style.pageLink} 
+        <div 
+           // className={style.pageLink} 
             onClick={mobileModalOpen != undefined ? (() => mobileModalOpen(false)) : null}
             ref={ref}
         >
             {children}
-        </a>
+        </div>
     )
 })
 
@@ -132,7 +129,7 @@ export const Raiting = () => {
                 src="https://yandex.ru/sprav/widget/rating-badge/236394758693?type=rating&theme=dark" 
                 width="150" 
                 height="50" 
-                frameborder="0"
+                style={{border: '0'}}
             >
             </iframe>
         </div>

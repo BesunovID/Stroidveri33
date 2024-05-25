@@ -14,14 +14,12 @@ export default function HamburgerMenu() {
         <div className={style.hamburger}>
             <div className={style['logo-m']}>
                 <Link href='/'>
-                    <a>
-                        <Image 
-                            src='/logo.png'
-                            width={90}
-                            height={90}
-                            alt='Стройдвери 33' 
-                        />
-                    </a>
+                    <Image 
+                        src='/logo.png'
+                        width={90}
+                        height={90}
+                        alt='Стройдвери 33' 
+                    />
                 </Link>
             </div>
             <div className={style['numbers-mobile']}>
@@ -33,7 +31,7 @@ export default function HamburgerMenu() {
                     src={'/hamburger.svg'} 
                     width={35}
                     height={35}
-                    layout='fill'
+                   // layout='fill'
                     alt={'Открыть меню'}
                 />
             </button>

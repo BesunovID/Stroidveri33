@@ -24,8 +24,9 @@ export default function Category( {products, header} ) {
                         <Image 
                             src="/left-arrow.svg" 
                             alt="Назад" 
-                            layout="fill" 
-                            unoptimized = {false}
+                            fill
+                            sizes="8vw"
+                           // unoptimized = {false}
                         />
                     </button>
                 </Link>

@@ -13,8 +13,11 @@ export default function ProductCard({ product, colors }) {
                 <Image 
                     src={product.image} 
                     alt={product.name} 
-                    layout='fill'
-                    objectFit='contain'
+                    fill
+                    sizes="(max-width: 600px) 90vw, (max-width: 900px) 80vw, (max-width: 1150px) 60vw, 50vw"
+                    style={{objectFit:"contain"}}
+                    //layout='fill'
+                    //objectFit='contain'
                 />
             </div>
             {product.category === 'doors' ? 

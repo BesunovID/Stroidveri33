@@ -27,7 +27,9 @@ export default function Product( {content} ) {
                     <Image 
                         src="/left-arrow.svg" 
                         alt="Назад" 
-                        layout="fill" 
+                        //layout="fill" 
+                        fill
+                        sizes="8vw"
                     />
                 </button>
             </Link>
