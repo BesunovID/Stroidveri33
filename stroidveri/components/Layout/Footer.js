@@ -7,30 +7,30 @@ export default function Footer() {
       <footer className={style.footer}>
         <div className={style.links}>
           <span>Мы в социальных сетях:</span>
-          <a href="viber://chat?number=%2B79300310053">
+          <Link href="viber://chat?number=%2B79300310053">
             <Image 
               src="/viber.svg"
               alt="Написать нам в Viber"
               width={45}
               height={45}
             />
-          </a>
-          <a href="https://wa.me/79300310053">
+          </Link>
+          <Link href="https://wa.me/79300310053">
             <Image 
               src="/whatsapp.svg"
               alt="Написать нам в WhatsApp"
               width={45}
               height={45}
             />
-          </a>
-          <a href="viber://chat?number=%2B79300310053">
+          </Link>
+          <Link href="https://vk.com/stroidveri33">
             <Image 
               src="/vk.svg"
               alt="Наша группа ВКонтакте"
               width={45}
               height={45}
             />
-          </a>
+          </Link>
         </div>
         <div className={style.logoFooter}>
           <Image src="/logo.png" alt="ООО Стройдвери" width={90} height={90} />

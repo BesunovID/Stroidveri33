@@ -26,7 +26,6 @@ export default function Contacts() {
                             fill
                             sizes="10vw"
                            // layout="fill"
-                            unoptimized = {false}
                         />
                     </div>
                     <h2> 
@@ -42,7 +41,6 @@ export default function Contacts() {
                             fill
                             sizes="10vw"
                           //  layout="fill"
-                            unoptimized = {false}
                         />
                     </div>
                     <h2>stroidveri33@mail.ru</h2>
