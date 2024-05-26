@@ -2,6 +2,8 @@ import Head from "next/head"
 import Image from "next/image"
 import { LazyElement } from "../components/LazyElement"
 import style from '../styles/Delivery.module.scss'
+import delivery1 from '../public/delivery1.png'
+import delivery2 from '../public/delivery2.png'
 
 export default function Delivery() {
     return(
@@ -19,7 +21,7 @@ export default function Delivery() {
                 <LazyElement>
                     <div className={style['delivery-image1']}>
                         <Image 
-                            src={'/delivery1.png'}
+                            src={delivery1}
                             alt={'Доставка в пути'}
                             width={768}
                             height={432}
@@ -41,7 +43,7 @@ export default function Delivery() {
                             <LazyElement>
                                 <div className={style['delivery-image2']}>
                                     <Image 
-                                        src={'/delivery2.png'}
+                                        src={delivery2}
                                         alt={'Разгрузка доставки'}
                                         width={768}
                                         height={432}

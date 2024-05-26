@@ -1,6 +1,9 @@
 import style from '../../styles/Layout.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
+import viberImg from '../../public/viber.webp'
+import vkImg from '../../public/vk.webp'
+import whatsAppImg from '../../public/whatsapp.webp'
 
 export default function Footer() {
     return(
@@ -9,26 +12,26 @@ export default function Footer() {
           <span>Мы в социальных сетях:</span>
           <Link href="viber://chat?number=%2B79300310053">
             <Image 
-              src="/viber.webp"
+              src={viberImg}
+              width={40}
+              height={40}
               alt="Написать нам в Viber"
-              width={45}
-              height={45}
             />
           </Link>
           <Link href="https://wa.me/79300310053">
             <Image 
-              src="/whatsapp.webp"
+              src={whatsAppImg}
+              width={40}
+              height={40}
               alt="Написать нам в WhatsApp"
-              width={45}
-              height={45}
             />
           </Link>
           <Link href="https://vk.com/stroidveri33">
             <Image 
-              src="/vk.webp"
+              src={vkImg}
+              width={40}
+              height={40}
               alt="Наша группа ВКонтакте"
-              width={45}
-              height={45}
             />
           </Link>
         </div>

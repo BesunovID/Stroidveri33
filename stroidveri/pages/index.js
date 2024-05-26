@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import CatalogCard from '../components/CatalogCard'
 import { catalogList } from '../components/consts/catalogList'
+import mainDoorsImg from '../public/main-doors.webp'
 
 export default function Home({ doors, furnitures }) {
   return (
@@ -24,11 +25,9 @@ export default function Home({ doors, furnitures }) {
 
       <div className={style.promo}>
         <Image
-          src='/main-doors.webp'
+          src={mainDoorsImg}
           alt='Строительные деревянные двери оптом от производителя'
           priority
-          width={1290}
-          height={604}
           style={{
               'width': '100%',
               'height': 'auto',

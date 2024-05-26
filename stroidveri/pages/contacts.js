@@ -3,6 +3,8 @@ import Image from "next/image"
 import style from "../styles/Contacts.module.scss"
 import React from 'react';
 import dynamic from 'next/dynamic'
+import contactPhoneImg from '../public/contactPhone.webp'
+import contactMailImg from '../public/contactMail.webp'
 
 const DynamicMap = dynamic(() => import('../components/YMap'));
 
@@ -21,10 +23,10 @@ export default function Contacts() {
                 <div className={style.numbers}>
                     <div className={style['numbers-image']}>
                         <Image
-                            src={"/contactPhone.webp"}
+                            src={contactPhoneImg}
                             alt={'Телефон'}
                             fill
-                            sizes="10vw"
+                            style={{objectFit:'contain'}}
                            // layout="fill"
                         />
                     </div>
@@ -36,10 +38,10 @@ export default function Contacts() {
                 <div className={style.mail}>
                     <div className={style['mail-image']}>
                         <Image
-                            src={'/contactMail.webp'}
+                            src={contactMailImg}
                             alt={'Почта'}
                             fill
-                            sizes="10vw"
+                            style={{objectFit:'contain'}}
                           //  layout="fill"
                         />
                     </div>
