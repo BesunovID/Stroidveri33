@@ -49,6 +49,10 @@ const Content = ({ product }) => {
                     fill
                     sizes="(max-width: 600px) 90vw, (max-width: 900px) 40vw, (max-width: 1150px) 30vw, 20vw"
                     style={{objectFit:"contain"}}
+                    priority={product.name === 'ДГ 21-9п' || product.name === 'ДГ 21-13лп' || product.name === 'Замок сувальдный' || product.name === 'Замок врезной, сувальдный'
+                        ? true 
+                        : false
+                    }
                     // layout='fill'
                    // objectFit='contain'
                 />

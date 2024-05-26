@@ -79,7 +79,7 @@ export const MenuLinks = ({mobileModalOpen}) => {
     return(
         <div className={style.navLinks}>
             {mobileModalOpen != undefined ? 
-                <Link href={'/'} passHref>
+                <Link className={style.pageLink} href={'/'} passHref>
                     <PageLink mobileModalOpen={mobileModalOpen}>
                         Главная
                     </PageLink>

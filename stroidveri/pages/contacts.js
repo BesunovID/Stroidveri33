@@ -21,7 +21,7 @@ export default function Contacts() {
                 <div className={style.numbers}>
                     <div className={style['numbers-image']}>
                         <Image
-                            src={"/contactPhone.svg"}
+                            src={"/contactPhone.webp"}
                             alt={'Телефон'}
                             fill
                             sizes="10vw"
@@ -36,7 +36,7 @@ export default function Contacts() {
                 <div className={style.mail}>
                     <div className={style['mail-image']}>
                         <Image
-                            src={'/contactMail.svg'}
+                            src={'/contactMail.webp'}
                             alt={'Почта'}
                             fill
                             sizes="10vw"

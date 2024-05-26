@@ -9,7 +9,7 @@ export default function Footer() {
           <span>Мы в социальных сетях:</span>
           <Link href="viber://chat?number=%2B79300310053">
             <Image 
-              src="/viber.svg"
+              src="/viber.webp"
               alt="Написать нам в Viber"
               width={45}
               height={45}
@@ -17,7 +17,7 @@ export default function Footer() {
           </Link>
           <Link href="https://wa.me/79300310053">
             <Image 
-              src="/whatsapp.svg"
+              src="/whatsapp.webp"
               alt="Написать нам в WhatsApp"
               width={45}
               height={45}
@@ -25,7 +25,7 @@ export default function Footer() {
           </Link>
           <Link href="https://vk.com/stroidveri33">
             <Image 
-              src="/vk.svg"
+              src="/vk.webp"
               alt="Наша группа ВКонтакте"
               width={45}
               height={45}

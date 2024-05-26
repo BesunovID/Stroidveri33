@@ -16,6 +16,7 @@ export default function ProductCard({ product, colors }) {
                     fill
                     sizes="(max-width: 600px) 90vw, (max-width: 900px) 80vw, (max-width: 1150px) 60vw, 50vw"
                     style={{objectFit:"contain"}}
+                    priority
                     //layout='fill'
                     //objectFit='contain'
                 />
