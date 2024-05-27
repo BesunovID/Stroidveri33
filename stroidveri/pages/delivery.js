@@ -18,7 +18,7 @@ export default function Delivery() {
             </Head>
             <div className={style.delivery}>
                 <h1>Доставка продукции по России</h1>
-                <LazyElement>
+               
                     <div className={style['delivery-image1']}>
                         <Image 
                             src={delivery1}
@@ -33,14 +33,14 @@ export default function Delivery() {
                             }}
                         />
                     </div>
-                </LazyElement>
+               
                 <div className={style['delivery-descript']}>
                     {text.map((el, index) => (
-                        <LazyElement key={index}>
+                        <>
                             {el.header != '' ? <h2>{el.header}</h2> : null}
                             <p>{el.text}</p> 
                             {index === 2 ? 
-                            <LazyElement>
+                           
                                 <div className={style['delivery-image2']}>
                                     <Image 
                                         src={delivery2}
@@ -55,8 +55,8 @@ export default function Delivery() {
                                         }}
                                     />
                                 </div>
-                            </LazyElement> : ''}
-                        </LazyElement>
+                             : ''}
+                        </>
                     ))}
                 </div>
             </div>
