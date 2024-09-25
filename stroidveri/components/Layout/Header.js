@@ -37,7 +37,6 @@ export default function Header() {
                 <div className={style.contactsHeadWrap}>
                     <div className={style.tel}>
                         <span>8-930-031-00-53</span> 
-                        <span>8-904-596-33-84</span> 
                     </div>
                     <span className={style.mail}>stroidveri33@mail.ru</span>
                 </div>
@@ -59,7 +58,6 @@ export default function Header() {
                             <MenuLinks />
                             <div className={style.numbers}>
                                 <a href="tel:89300310053">8-930-031-00-53</a> 
-                                <a href="tel:89045963384">8-904-596-33-84</a>
                             </div>
                             <ButtonFeedBack />
                             <Raiting />
